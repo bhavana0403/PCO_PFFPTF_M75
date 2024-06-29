@@ -86,3 +86,51 @@ how was your day
 """
 ###################################################################################
 
+# Memory Allocation of Sequential Datatype
+"""
+-> When the value is a sequential datatype, a layer of memory will be created in 
+   value space which gets divided into number of blocks which is equal to length of
+   the collection.
+-> Each value of the collection will get stored in individual blocks.
+-> Once after storing all the values, an address will be given to this memory
+   layer which gets stored wrt variable name in variable space
+"""
+
+# Indexing
+"""
+-> We can get individual values from the collection using index numbers
+-> There are 2 types
+      1) positive indexing - positive index numbers are given from left to right
+                             of the collection starting from 0 to len(coll)-1
+      2) negative indexing - negative index numbers are given from right to left 
+                             of the collection starting from -1 to -len(collection)
+-> To access individual values we make use of the syntax
+            Var[index_no]
+-> Even if we make use of negative indexing, internally it will be considered as
+   positive indexing only
+-> To modify the values of sequential collection we make use of the syntax
+            Var[index_no] = new_value
+"""
+
+st = "Hai Mary"
+"""
+-8	-7	-6	-5	-4	-3	-2	-1
+ H	 a	 i 		 M	 a	 r	 y
+ 0	 1	 2	 3	 4	 5	 6	 7
+"""
+print(st)
+print(len(st))
+
+print(st[4])      # M
+print(st[-2])     # r
+
+# st[4] = 'm'       # TypeError
+
+"""
+-> String doesn't allow to modify it's values
+-> String is a immutable collection
+-> A collection that does not allow the user to modify or add or remove the values
+"""
+
+
+
