@@ -132,5 +132,25 @@ print(st[-2])     # r
 -> A collection that does not allow the user to modify or add or remove the values
 """
 
+st = 'mississippi'
+st1 = 'pepsi'
+"""
+-11	-10	-9	-8	-7	-6	-5	-4	-3	-2	-1
+ m 	 i	 s	 s	 i	 s	 s	 i	 p	 p	 i
+ 0	 1	 2	 3	 4	 5	 6	 7	 8	 9	 10
+ 
+-5 -4  -3  -2  -1
+p	e	p	s	i
+0	1	2	3	4
+"""
+
+print(id(st[2]))        # 140722970270448
+print(id(st[3]))        # 140722970270448
+print(id(st1[3]))       # 140722970270448
+print(id(st[-5]))       # 140722970270448
+
+
+
+
 
 
