@@ -31,3 +31,11 @@ print(type(li))     # <class 'list'>
 print(bool(li))     # False
 
 li = [386, [3, 8, 6], '386', '[3, 8, 6]']
+print(len(li[3]))       #
+
+nums = [1, 2, [3, 4, [5, 6]]]
+
+nums = [[[[1]]]]
+print(nums[0][0][0][0])
+
+
