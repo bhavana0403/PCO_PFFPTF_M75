@@ -185,4 +185,24 @@ print('python class'.startswith('pYTHOn'))  # False
 
 #################################################################################
 
-# 14)
+# 14) count
+"""
+-> It is used to count the number of times a substring is present in the string
+-> Syntax:
+            Var.count(substring)
+            Var.count(substring, SI)
+            Var.count(substring, SI, EI)
+-> The return type of count is an integer
+-> If the substring is not present, count will return 0
+"""
+
+st = 'mississippi'
+print(st.count('i'))        # 4
+print(st.count('i', 2))     # 3
+print(st.count('i', 3, 7))      # 1
+print(st.count('ssi'))      # 2
+
+print(st.count('z'))    # 0
+
+
+# print(st.count('i', 2))
