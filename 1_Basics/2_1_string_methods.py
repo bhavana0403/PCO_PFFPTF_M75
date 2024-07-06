@@ -330,7 +330,8 @@ print(st.replace(' ', '1234'))
    in the string
 -> Syntax:
             Var.strip()     # removes leading and trailing white spaces, \n, \t
-            
+            Var.strip(ch)   # removes leading and trailing ch
+-> The return type of strip is string
 """
 
 st = '        hello world              '
@@ -356,4 +357,36 @@ print(st.strip('_'))        # 'hello world           '
 st = 'hhhhhhhhhhhhhhhhheeeeeeeeeeellllllloooooooooooooo'
 print(st.strip())
 print(st.strip('h'))        # eeeeeeeeeeellllllloooooooooooooo
+
+###################################################################################
+
+# 21) lstrip
+"""
+-> It is used to remove the leading whitespaces, \n, \t or specified characters
+-> Syntax:
+            Var.lstrip()
+            Var.lstrip(ch)
+"""
+
+st = '        hello world          '
+print(st.lstrip())      # 'hello world          '
+
+st = '@@@@@@@@@@@hello world&&&&&&&&&&&&&&&'
+print(st.lstrip('@'))       # hello world&&&&&&&&&&&&&&&
+
+###################################################################################
+
+# 22) rstrip
+"""
+-> It is used to remove trailing whitespaces, \n, \t or specified characters
+-> Syntax:
+            Var.rstrip()
+            Var.rstrip(ch)
+"""
+
+st = '         hello world           '
+print(st.rstrip())      # '         hello world'
+
+st = '@@@@@@@@@@@hello world@@@@@@@@@@@@@@@@'
+print(st.rstrip('@'))       # @@@@@@@@@@@hello world
 
