@@ -206,3 +206,65 @@ print(st.count('z'))    # 0
 
 
 # print(st.count('i', 2))
+
+#################################################################################
+
+# 15) index
+"""
+-> It is used to get the index of first occurrence of given substring in a string,
+   within the specified limits
+-> Syntax:
+            Var.index(substring)
+            Var.index(substring, SI)
+            Var.index(substring, SI, EI)
+-> The return type of index is integer
+-> If the value is not present, control will throw ValueError
+"""
+
+st = 'mississippi'
+print(st.index('i'))        # 1
+print(st.index('ssi'))      # 2
+
+print(st.index('s', 4))     # 5
+
+print(st.index('i', 2, 10))     # 4
+
+# print(st.index('z'))        # ValueError: substring not found
+
+# print(st[13])       # IndexError
+
+# print(st.index('i', 15, 20))        # ValueError: substring not found
+
+#################################################################################
+
+# 16) rindex
+"""
+-> It is used to get the index of first occurrence of a given substring from right 
+   to left of the collection/ specified limits
+-> Syntax:
+            Var.rindex(substring)
+            Var.rindex(substring, SI)
+            Var.rindex(substring, SI, EI)
+-> The return type of index is integer
+-> If the value is not present, control will throw ValueError
+"""
+
+st = 'United States'
+"""
+-13	-12	-11	-10	-9	-8	-7	-6	-5	-4	-3	-2	-1
+U	n	i	t	e	d		S	t	a	t	e	s
+0	1	2	3	4	5	6	7	8	9	10	11	12
+"""
+
+print(st.index('e'))        # 4
+
+print(st.rindex('e'))       # 11
+
+print(st.rindex('t', 2, 9))     # 8
+
+print(st.index('S', 6))     # 7
+
+print(st.index('Z'))        # ValueError
+
+##################################################################################
+
