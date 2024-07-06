@@ -264,7 +264,61 @@ print(st.rindex('t', 2, 9))     # 8
 
 print(st.index('S', 6))     # 7
 
-print(st.index('Z'))        # ValueError
+# print(st.index('Z'))        # ValueError
 
 ##################################################################################
+
+# 17) find
+"""
+-> It works same as that of index method but, if the value is not present it will
+   return -1 instead of throwing an error like index method
+-> Syntax:
+            Var.find(substring)
+            Var.find(substring, SI)
+            Var.find(substring, SI, EI)
+-> The return type of index is integer
+"""
+
+st = 'United States'
+"""
+-13	-12	-11	-10	-9	-8	-7	-6	-5	-4	-3	-2	-1
+U	n	i	t	e	d		S	t	a	t	e	s
+0	1	2	3	4	5	6	7	8	9	10	11	12
+"""
+
+print(st.index('i'))    # 2
+
+print(st.find('i'))     # 2
+
+# print(st.index('u'))        # ValueError
+
+print(st.find('u'))     # -1
+
+#################################################################################
+
+# 18) rfind
+
+#################################################################################
+
+# 19) replace
+"""
+-> It is used to replace a substring by a new string
+-> 
+"""
+
+st = 'peter piper picked a peck of pickled peppers'
+
+print(st.replace('p', 'P'))     # Peter PiPer Picked a Peck of Pickled PePPers
+
+print(st.replace('pe', 'Pe'))   # Peter piPer picked a Peck of pickled PepPers
+
+print(st.replace('p', 'P', 2))      # Peter Piper picked a peck of pickled peppers
+
+print(st.replace('x', 'X'))     # peter piper picked a peck of pickled peppers
+
+print(st.replace('', '_'))      # _p_e_t_e_r_ _p_i_p_e_r_ _p_i_c_k_e_d_ _a_ _p_e_c_k_ _o_f_ _p_i_c_k_l_e_d_ _p_e_p_p_e_r_s_
+
+print(st.replace(' ', '_'))     # peter_piper_picked_a_peck_of_pickled_peppers
+
+print(st.replace(' ', '1234'))
 
