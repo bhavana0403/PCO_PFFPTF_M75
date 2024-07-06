@@ -322,3 +322,38 @@ print(st.replace(' ', '_'))     # peter_piper_picked_a_peck_of_pickled_peppers
 
 print(st.replace(' ', '1234'))
 
+###################################################################################
+
+# 20) strip
+"""
+-> It is used to remove leading and trailing white spaces, \n, \t  characters 
+   in the string
+-> Syntax:
+            Var.strip()     # removes leading and trailing white spaces, \n, \t
+            
+"""
+
+st = '        hello world              '
+print(len(st))
+
+print(st)           # '        hello world              '
+print(st.strip())       # 'hello world'
+
+st = '______________________hello world________________'
+print(st.strip())       # ______________________hello world________________
+print(st.strip('_'))        # hello world
+
+st = '___________________hello world           '
+
+print(st)       # '___________________hello world           '
+print(len(st))  # 41
+
+print(st.strip())       # '___________________hello world'
+print(len(st.strip()))  # 30
+
+print(st.strip('_'))        # 'hello world           '
+
+st = 'hhhhhhhhhhhhhhhhheeeeeeeeeeellllllloooooooooooooo'
+print(st.strip())
+print(st.strip('h'))        # eeeeeeeeeeellllllloooooooooooooo
+
