@@ -540,10 +540,30 @@ I am from Mangaluru
 I work as a Accounts Executive
 """
 
+name = 'Bhavana'
+place = "Mysuru"
+designation = "Python Trainer"
 
+emp = f"""My name is {name}
+I am from {place}
+I work as a {designation}"""
 
+print(emp)
+"""
+My name is Bhavana
+I am from Mysuru
+I work as a Python Trainer
+"""
 
+name = input('Enter the name: ')
+place = input('Enter the place: ')
+designation = input('Enter the designation: ')
 
+emp = f"""My name is {name}
+I am from {place}
+I work as a {designation}"""
+
+print(emp)
 
 
 
