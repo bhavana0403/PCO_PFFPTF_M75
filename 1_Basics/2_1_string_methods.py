@@ -428,3 +428,46 @@ print(st.split('_', maxsplit=2))    # ['hai', 'hello', 'how_are_you_how_is_your_
 
 print(st.split('_', 2))     # ['hai', 'hello', 'how_are_you_how_is_your_python_class']
 
+##################################################################################
+
+# 24) rsplit
+"""
+
+"""
+
+st = 'python programming is very easy'
+
+print(st.rsplit())      # ['python', 'programming', 'is', 'very', 'easy']
+
+print(st.split(maxsplit=2))     # ['python', 'programming', 'is very easy']
+
+print(st.rsplit(maxsplit=2))    # ['python programming is', 'very', 'easy']
+
+##################################################################################
+
+# 25) join
+"""
+-> It is used to join an iterable by a gluestring
+-> Syntax:
+            gluestring.join(iterable)
+-> The return type of join is a string
+"""
+
+words = ['python', 'programming', 'is', 'very', 'easy']
+print(' '.join(words))      # python programming is very easy
+
+print(''.join(words))   # pythonprogrammingisveryeasy
+
+print('_'.join(words))      # python_programming_is_very_easy
+
+print('_'.join('abc'))      # a_b_c
+
+# print(''.join([1, 2, 3]))       # TypeError
+
+print('$'.join(('a', 'b', 'apple')))     # a$b$apple
+
+##################################################################################
+
+
+
+
