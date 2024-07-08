@@ -390,3 +390,41 @@ print(st.rstrip())      # '         hello world'
 st = '@@@@@@@@@@@hello world@@@@@@@@@@@@@@@@'
 print(st.rstrip('@'))       # @@@@@@@@@@@hello world
 
+st = 'jjjjjjjjjramwwwwww'
+st = st.lstrip('j')
+print(st)       # ramwwwwww
+
+st = st.rstrip('w')     # ramwwwwww
+print(st)       # ram
+
+print(st.lstrip('j').rstrip('w'))       # ram
+
+##################################################################################
+
+# 23) split
+"""
+-> It is used to split the given string into list of strings
+-> Syntax:
+            Var.split()
+            Var.split(ch)
+            Var.split(ch, maxsplit=n)
+            Var.split(maxsplit=n)
+-> The return type of split is a list
+"""
+
+st = 'python programming is very easy'
+print(st.split())       # ['python', 'programming', 'is', 'very', 'easy']
+
+print(st.split('e'))    # ['python programming is v', 'ry ', 'asy']
+
+print(st.split(maxsplit=2))     # ['python', 'programming', 'is very easy']
+
+st = 'hai_hello_how_are_you_how_is_your_python_class'
+print(st.split())   # ['hai_hello_how_are_you_how_is_your_python_class']
+
+print(st.split('_'))        #
+
+print(st.split('_', maxsplit=2))    # ['hai', 'hello', 'how_are_you_how_is_your_python_class']
+
+print(st.split('_', 2))     # ['hai', 'hello', 'how_are_you_how_is_your_python_class']
+
