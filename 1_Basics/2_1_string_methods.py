@@ -468,6 +468,86 @@ print('$'.join(('a', 'b', 'apple')))     # a$b$apple
 
 ##################################################################################
 
+# 26) format
+"""
+-> We make use of placeholders to get dynamic input from the users
+-> 
+"""
+emp1 = """My name is Laxmi
+I am from Bengaluru
+I work as a Test Enginner"""
+
+emp2 = """My name is Mithesh
+I am from Chennai
+I work as a Developer"""
+
+emp3 = """My name is Rohit
+I am from Hyderabad
+I work as a Data Scientist"""
+
+
+emp = """My name is {}
+I am from {}
+I work as a {}"""
+
+print(emp.format("Sagar", "Tamil Nadu", "Front End Developer"))
+"""
+My name is Sagar
+I am from Tamil Nadu
+I work as a Front End Developer
+"""
+
+print(emp)
+
+emp = """My name is {0}
+I am from {1}
+I work as a {2}"""
+
+print(emp.format("John", "Mangaluru", "Accounts Executive"))
+"""
+My name is John
+I am from Mangaluru
+I work as a Accounts Executive
+"""
+
+emp = """My name is {2}
+I am from {0}
+I work as a {1}"""
+
+print(emp.format("John", "Mangaluru", "Accounts Executive"))
+"""
+My name is Accounts Executive
+I am from John
+I work as a Mangaluru
+"""
+
+
+emp = """My name is {name}
+I am from {place}
+I work as a {designation}"""
+
+print(emp.format(name="John", place="Mangaluru", designation="Accounts Executive"))
+"""
+My name is John
+I am from Mangaluru
+I work as a Accounts Executive
+"""
+
+print(emp.format(place="Mangaluru", name="John", designation="Accounts Executive"))
+"""
+My name is John
+I am from Mangaluru
+I work as a Accounts Executive
+"""
+
+
+
+
+
+
+
+
+
 
 
 
