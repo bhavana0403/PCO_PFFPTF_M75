@@ -207,3 +207,14 @@ l = [8, 5, 10, 3, 45, 13, 97, 38]
 # print(l)    # [38, 97, 13, 45, 3, 10, 5, 8]
 
 
+names = ['john', 'alex', 'mary', 'bob', 'eve', 'steve']
+# names.sort()
+# print(names)        # ['alex', 'bob', 'eve', 'john', 'mary', 'steve']
+
+names.sort(reverse=True)
+print(names)        # ['steve', 'mary', 'john', 'eve', 'bob', 'alex']
+
+
+
+
+
