@@ -214,6 +214,9 @@ names = ['john', 'alex', 'mary', 'bob', 'eve', 'steve']
 names.sort(reverse=True)
 print(names)        # ['steve', 'mary', 'john', 'eve', 'bob', 'alex']
 
+##################################################################################
+
+# 11) copy
 
 
 
