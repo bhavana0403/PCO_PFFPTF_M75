@@ -114,3 +114,60 @@ s = {1, 2, 3, 'h', 'w', ' ', 'r', 'l', 'd', 'o', 'e'}
 
 #######################################################################################
 
+# 7) union
+"""
+-> It returns a set which has the values of a set and an iterable
+-> Syntax:
+            Var.union(iterable)
+-> Update will not modify original set
+-> The return type of union is set
+"""
+
+# s1 = {1, 2, 3}
+# s2 = {4, 5, 6}
+# print(s1.union(s2))     # {1, 2, 3, 4, 5, 6}
+# print(s1)   # {1, 2, 3}
+# print(s2)   # {4, 5, 6}
+#
+# print(s1.union('abc'))  # {1, 2, 3, 'b', 'a', 'c'}
+#
+# print(s1.union([10, 20, 30]))       # {1, 2, 3, 10, 20, 30}
+
+#######################################################################################
+
+# 8) intersection
+"""
+-> It is used to return the common elements present in set and an iterable
+-> Syntax:
+            Var.intersection(iterable)
+-> The return type of intersection is set
+-> If there is no common elements, it will return empty set set()
+"""
+
+s1 = {1, 2, 3, 'a', (10, 20)}
+s2 = {2, 4, 6}
+s3 = {(10, 20), 'b', 'c', 3}
+
+# print(s1.intersection(s2))      # {2}
+#
+# print(s1)       #
+# print(s2.intersection(s3))      # set()
+
+########################################################################################
+
+# 9) difference
+"""
+-> It is used to get the values of set1 excluding the common elements of set1 and
+   iterable
+-> Syntax:
+            Var.difference(iterable)
+-> The return type of difference is set
+"""
+
+s1 = {1, 2, 3, 'a', (10, 20)}
+s2 = {2, 4, 6}
+s3 = {(10, 20), 'b', 'c', 3}
+
+print(s1.difference(s2))        # {1, 3, 'a', (10, 20)}
+print(s3.difference(['a', 'b', 'c', 3]))        # {(10, 20)}
+
