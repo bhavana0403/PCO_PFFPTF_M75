@@ -41,3 +41,4 @@ print(s3)       # {False, (1, 2), 9, 19, 23}
 
 s3.remove(False)
 print(s3)
+
