@@ -9,17 +9,17 @@
 -> The return type of add is None
 """
 
-s = {10, 20}
-print(s.add(30))    # None
-print(s)        # {10, 20, 30}
-
-s.add('hai')
-print(s)        # {10, 'hai', 20, 30}
+# s = {10, 20}
+# print(s.add(30))    # None
+# print(s)        # {10, 20, 30}
+#
+# s.add('hai')
+# print(s)        # {10, 'hai', 20, 30}
 
 # s.add('hello', 87)   # TypeError: set.add() takes exactly one argument (2 given)
 
-s.add(('hello', 86))    #
-print(s)        # {10, 'hai', 20, ('hello', 86), 30}
+# s.add(('hello', 86))    #
+# print(s)        # {10, 'hai', 20, ('hello', 86), 30}
 
 # s.add(['a', 'b'])       # TypeError: unhashable type: 'list'
 
@@ -36,6 +36,7 @@ print(s)        # {10, 'hai', 20, ('hello', 86), 30}
 
 s1 = {1, 2, 3}
 s2 = {4, 5, 6}
+# print(s1.union(s2))     # {1, 2, 3, 4, 5, 6}
 # print(s1.update(s2))    # None
 # print(s1)       # {1, 2, 3, 4, 5, 6}
 # print(s2)       # {4, 5, 6}
@@ -63,7 +64,7 @@ s2 = {4, 5, 6}
 """
 
 s = {1, 2, 3, 'h', 'w', ' ', 'r', 'l', 'd', 'o', 'e'}
-print(s.pop())  # h -> some random element will be removed
+# print(s.pop())  # h -> some random element will be removed
 
 # print(s.pop(1))     # TypeError: set.pop() takes no arguments (1 given)
 
@@ -164,10 +165,53 @@ s3 = {(10, 20), 'b', 'c', 3}
 -> The return type of difference is set
 """
 
-s1 = {1, 2, 3, 'a', (10, 20)}
-s2 = {2, 4, 6}
-s3 = {(10, 20), 'b', 'c', 3}
+# s1 = {1, 2, 3, 'a', (10, 20)}
+# s2 = {2, 4, 6}
+# s3 = {(10, 20), 'b', 'c', 3, 2}
+#
+# print(s1.difference(s2))        # {1, 3, 'a', (10, 20)}
+# print(s3.difference(['a', 'b', 'c', 3]))        # {(10, 20)}
+#
+# print(s1.intersection(s3, s2))
 
-print(s1.difference(s2))        # {1, 3, 'a', (10, 20)}
-print(s3.difference(['a', 'b', 'c', 3]))        # {(10, 20)}
+######################################################################################
+
+# 10) intersection_update
+"""
+-> It is used to change the original set with the resultant obtained from intersection 
+   method
+-> Syntax:
+            Var.intersection_update(iterable)
+-> The return type of intersection_update is None 
+"""
+# s1 = {1, 2, 3, 'a', (10, 20)}
+# s2 = {2, 4, 6}
+# s3 = {(10, 20), 'b', 'c', 3}
+
+# print(s1.intersection_update(s2))   # None
+# print(s1)       # {2}
+
+# s1.intersection_update(s3)
+# print(s1)       # {3, (10, 20)}
+
+# s2.intersection_update(set())
+# print(s2)   # set()
+
+#######################################################################################
+
+# 11) difference_update
+"""
+-> Syntax:
+            Var.difference_update(iterable)
+"""
+# s1 = {1, 2, 3, 'a', (10, 20)}
+# s2 = {2, 4, 6}
+# s3 = {(10, 20), 'b', 'c', 3, 2}
+#
+# print(s1.difference(s3))
+# print(s1.difference_update(s3))
+# print(s1)       # {1, 'a'}
+
+#####################################################################################
+
 
