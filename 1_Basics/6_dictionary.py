@@ -84,5 +84,15 @@ holidays = {(26, 1): 'Republic Day',
             (2, 10): 'Gandhi Jayanthi'
             }
 
+d = {'a': [1, 2, 3], 'b': ['java', 'python'], 'c': {'d': [50, 60]}}
+
+# 3
+print(d['a'][2])    # 3
+
+# python
+print(d['b'][1])
+
+# 50
+print(d['c']['d'][0])
 
 
