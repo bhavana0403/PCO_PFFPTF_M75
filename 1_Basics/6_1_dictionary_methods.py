@@ -55,11 +55,11 @@
             Var.get(key, default_val)   # return the value of a key if it is present, if the key not present it return default_value
 """
 
-temperature = {'Bengaluru': 38,
-               'Chennai': 42,
-               'Mumbai': 39,
-               'Delhi': 43
-               }
+# temperature = {'Bengaluru': 38,
+#                'Chennai': 42,
+#                'Mumbai': 39,
+#                'Delhi': 43
+#                }
 #
 # print(temperature.get('Bengaluru'))     # 38
 # print(temperature.get('Raipur'))        # None
@@ -117,3 +117,77 @@ temperature = {'Bengaluru': 38,
 # print(d)        # {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': None, 'f': 10}
 
 #####################################################################################
+
+# 7) update
+"""
+-> It is used to add a key value pair to the dictionary
+-> Syntax:
+            Var.update({k1:v1, k2: v2.........., kn:vn})
+            Var.update(k1=v1, k2=v2, ......, kn=vn) # van use this only when keys are string
+-> If the key is already present, it will modify the key, if the key is not present
+   it will add a new key value pair 
+"""
+
+# d = {}
+# print(d.update({'a': 10}))
+# print(d)        # {'a': 10}
+# d.update({'b': 20})
+# print(d)        # {'a': 10, 'b': 20}
+# d.update({'a':100})
+# print(d)        # {'a': 100, 'b': 20}
+#
+# d.update(c=30, d=40,  e=50, f=70, y=100, a=126)
+# print(d)        # {'a': 126, 'b': 20, 'c': 30, 'd': 40, 'e': 50, 'f': 70, 'y': 100}
+#
+# d.update({'p':10, 'q':[True, False]})
+# print(d)        # {'a': 126, 'b': 20, 'c': 30, 'd': 40, 'e': 50, 'f': 70, 'y': 100, 'p': 10, 'q': [True, False]}
+#
+# d.update({True:976})
+# print(d)
+
+###########################################################################################
+
+# 8) keys
+"""
+-> It is used to get all the keys of the dictionary
+-> Syntax:
+            Var.keys()
+"""
+
+d = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+temperature = {'Bengaluru': 38,
+               'Chennai': 42,
+               'Mumbai': 39,
+               'Delhi': 43
+               }
+
+# print(d.keys())     # dict_keys(['a', 'b', 'c', 'd'])
+# print(temperature.keys())       # dict_keys(['Bengaluru', 'Chennai', 'Mumbai', 'Delhi'])
+
+####################################################################################
+
+# 9) values
+"""
+-> It is used to get all the values of the dictionary
+-> Syntax:
+            Var.values()
+"""
+
+# print(d.values())   # dict_values([1, 2, 3, 4])
+# print(temperature.values())     # dict_values([38, 42, 39, 43])
+
+####################################################################################
+
+# 10) items
+"""
+-> It is used to get keys and values
+-> Syntax:
+            Var.items()
+"""
+
+# print(d.items())            # dict_items([('a', 1), ('b', 2), ('c', 3), ('d', 4)])
+# print(temperature.items())  # dict_items([('Bengaluru', 38), ('Chennai', 42), ('Mumbai', 39), ('Delhi', 43)])
+
+###################################################################################
+
