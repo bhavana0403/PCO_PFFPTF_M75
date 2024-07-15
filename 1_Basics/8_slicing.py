@@ -189,11 +189,32 @@ pyspiders = {'development': ['python',
                          'automation']
              }
 
+# # python
+# print(pyspiders['development'][0])
+# print(pyspiders['testing'][0])
+#
+# # html
+# print(pyspiders['development'][2]['web technology'][0])
 
-# python
-# html
-# clts
-# tpircs avaj
-# django
+# # clts
+# print(pyspiders['testing'][2]['manual testing'][2][::-1])
+#
+# # tpircs avaj
+# print(pyspiders['development'][2]['web technology'][2][::-1])
+#
+# # django
+# print(pyspiders['development'][3])
 
+######################################################################################
 
+sam = {'a': ['java', 'python'],
+       'b': ('manual', 'automation'),
+       'c': {'data', 'sql', 'manual'},
+       'd': {'e': {'f': [1, 2, [3, 4]]}}
+       }
+
+# 'automation'
+# 'manual'
+# 4
+# 2
+# [1, 2, [3, 4]]
