@@ -61,20 +61,20 @@ h	a	r	r	y		p	o	t	t	e	r
 # print(st[-3:-12:-2])
 
 
-# potter
-print(st[6:11+1:1])
-print(st[6:12])
-print(st[-6:-1+1:1])    # '' -> st[6:0:1]
-print(st[-6::1])        # potter
-print(st[-6:])          # potter
-print(st[6:])           # potter
-
-
-# yrrah
-print(st[-8:-13:-1])
-print(st[4:0-1:-1])         # '' -> st[4:11:-1]
-print(st[4::-1])            # yrrah
-print(st[-8::-1])           # yrrah
+# # potter
+# print(st[6:11+1:1])
+# print(st[6:12])
+# print(st[-6:-1+1:1])    # '' -> st[6:0:1]
+# print(st[-6::1])        # potter
+# print(st[-6:])          # potter
+# print(st[6:])           # potter
+#
+#
+# # yrrah
+# print(st[-8:-13:-1])
+# print(st[4:0-1:-1])         # '' -> st[4:11:-1]
+# print(st[4::-1])            # yrrah
+# print(st[-8::-1])           # yrrah
 
 """
 -> When we want to fetch the values till the end of the collection (left or right end)
@@ -83,11 +83,11 @@ print(st[-8::-1])           # yrrah
             Var[SI::SV]
 """
 
-print(st[0:5])      # harry
-print(st[:5])       # harry
-print(st[::2])      # hrypte
-print(st[-1:-6-1:-1])   # rettop
-print(st[:-7:-1])       # rettop
+# print(st[0:5])      # harry
+# print(st[:5])       # harry
+# print(st[::2])      # hrypte
+# print(st[-1:-6-1:-1])   # rettop
+# print(st[:-7:-1])       # rettop
 
 """
 -> When we want to fetch the values from start of the collection (left or right), 
@@ -96,23 +96,23 @@ print(st[:-7:-1])       # rettop
 """
 
 
-print(st[::])       # harry potter
-print(st)           # harry potter
+# print(st[::])       # harry potter
+# print(st)           # harry potter
 
-# when SV==-1, EV==-12 or -len(coll), SV=-1
-print(st[::-1])     # rettop yrrah
+# # when SV==-1, EV==-12 or -len(coll), SV=-1
+# print(st[::-1])     # rettop yrrah
 
 """
 -> To reverse a given collection we make use of the syntax,
             Var[::-1]
 """
 
-# print first 2 characters
-print(st[0:2:1])        # ha
-print(st[:2])           # ha
-
-# print first 4 characters
-print(st[:4])           # harr
+# # print first 2 characters
+# print(st[0:2:1])        # ha
+# print(st[:2])           # ha
+#
+# # print first 4 characters
+# print(st[:4])           # harr
 
 """
 -> To get first 'n' characters we make use of the syntax,
@@ -124,18 +124,76 @@ h	a	r	r	y		p	o	t	t	e	r
 0	1	2	3	4	5	6	7	8	9	10	11
 """
 
-# To get last 2 characters
-print(st[10:12])        # er
-print(st[-2:])          # er
-
-# To get last 5 characters
-print(st[-5:])      # otter
-print(st[7:])       # otter
+# # To get last 2 characters
+# print(st[10:12])        # er
+# print(st[-2:])          # er
+#
+# # To get last 5 characters
+# print(st[-5:])      # otter
+# print(st[7:])       # otter
 
 """
 -> To get last 'n' characters we make use of the syntax,
             Var[-n:]
 """
 
+######################################################################################
+
+sam = [4, 9.75, 'hello', ['john', 'steve', 'mary'], {8, 56, 93}, (6, 3)]
+
+# 4
+print(sam[0])
+
+# (6, 3)
+print(sam[5])
+print(sam[-1])
+print(sam[5][::])
+
+# 'mary'
+print(sam[3][2])
+
+# 'nhoj'
+print(sam[3][0][::-1])
+print('john'[::-1])
+
+# ['mary', 'steve']
+print(sam[3][:-2-1:-1])
+
+# (3, 6)
+print(sam[5][::-1])
+
+# olleh
+print(sam[2][::-1])
+
+
+# [4]
+print(sam[0])
+print(sam[0:0+1])
+
+# (6,)
+print(sam[5][0:1])
+
+# 56
+# print(sam[4][1])        # TypeError: 'set' object is not subscriptable
+
+
+#####################################################################################
+
+pyspiders = {'development': ['python',
+                             'sql',
+                             {'web technology': ['html', 'css', 'java script']},
+                             'django'],
+             'testing': ['python',
+                         'sql',
+                         {'manual testing': ['sdlc', 'testing', 'stlc']},
+                         'automation']
+             }
+
+
+# python
+# html
+# clts
+# tpircs avaj
+# django
 
 
