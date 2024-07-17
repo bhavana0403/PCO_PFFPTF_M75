@@ -174,7 +174,7 @@ print(dict(l1))     # {'a': 1, 'b': 2, 3: 'c'}
 ##########################################################################################
 
 # 8) Typecasting of set to other datatypes
-""" Same as that of typecasting set to other datatypes """
+""" Same as that of typecasting list to other datatypes """
 
 ##########################################################################################
 
