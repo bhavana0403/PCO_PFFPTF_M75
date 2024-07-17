@@ -135,3 +135,49 @@ print(set(a))           # {'h', 'i', 'a'}
 
 ########################################################################################
 
+# 6) Typecasting of list to other datatypes
+
+l = [1, 2, 3]
+
+# print(int(l))           # TypeError
+
+# print(float(l))         # TypeError
+
+# print(complex(l))       # TypeError
+
+print(bool(l))          # True
+
+print(str(l))           # '[1, 2, 3]'
+print(len(str(l)))      # 9
+
+print(tuple(l))         # (1, 2, 3)
+
+print(set(l))           # {1, 2, 3}
+
+# print(dict(l))          # TypeError
+
+l1 = [('a', 1), ('b', 2), ('c', 3)]
+print(dict(l1))      # {'a': 1, 'b': 2, 'c': 3}
+
+l1 = [['a', 1], ['b', 2], ['c', 3]]
+print(dict(l1))     # {'a': 1, 'b': 2, 'c': 3}
+
+l1 = [{'a', 1}, {'b', 2}, {'c', 3}]
+print(l1)
+print(dict(l1))     # {'a': 1, 'b': 2, 3: 'c'}
+
+#########################################################################################
+
+# 7) Typecasting of tuple to other datatypes
+""" Same as that of typecasting list to other datatypes """
+
+##########################################################################################
+
+# 8) Typecasting of set to other datatypes
+""" Same as that of typecasting set to other datatypes """
+
+##########################################################################################
+
+# 9) Typecasting of dictionary to other datatypes
+
+
