@@ -214,8 +214,19 @@ sam = {'a': ['java', 'python'],
        }
 
 # 'automation'
+print(sam['b'][1])
+
 # 'manual'
+print(sam['b'][0])
+
 # 4
+print(sam['d']['e']['f'][2][1])
+
 # 2
+print(sam['d']['e']['f'][1])
+
 # [1, 2, [3, 4]]
+print(sam['d']['e']['f'])
+
 # [4]
+print(sam['d']['e']['f'][2][1:])
