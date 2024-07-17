@@ -180,4 +180,31 @@ print(dict(l1))     # {'a': 1, 'b': 2, 3: 'c'}
 
 # 9) Typecasting of dictionary to other datatypes
 
+d = {'a': 1, 'b': 2, 'c': 3}
+
+# print(int(d))       # TypeError
+
+# print(float(d))     # TypeError
+
+# print(complex(d))       # TypeError
+
+print(bool(d))      # True
+
+print(str(d))       # '{'a': 1, 'b': 2, 'c': 3}'
+print(len(str(d)))  # 24
+
+print(list(d))      # ['a', 'b', 'c']
+print(list(d.keys()))   # ['a', 'b', 'c']
+print(list(d.values()))     # [1, 2, 3]
+print(list(d.items()))  # [('a', 1), ('b', 2), ('c', 3)]
+
+print(tuple(d))     # ('a', 'b', 'c')
+print(tuple(d.keys()))  # ('a', 'b', 'c')
+print(tuple(d.values()))    # (1, 2, 3)
+print(tuple(d.items()))    # (('a', 1), ('b', 2), ('c', 3))
+
+print(set(d))       # {'b', 'a', 'c'}
+print(set(d.keys()))    # {'b', 'a', 'c'}
+print(set(d.values()))  # {1, 2, 3}
+print(set(d.items()))   # {('c', 3), ('a', 1), ('b', 2)}
 
