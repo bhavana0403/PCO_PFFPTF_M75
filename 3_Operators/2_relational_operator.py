@@ -38,42 +38,74 @@
 
 # 3) Relational less than operator (<)
 
-print(41 < 41)      # False
-
-# print((3+3j) < (2+2j))  # TypeError
-
-print('B' < 'ABC')      # False -> 66 < 65 -> False
-
-print('a' < 'A')        # False -> 97 < 65 -> False
-
-print('A' < 'a')        # 65 < 97 -> True
-
-print(ord('e'))         # 101
-
-print(chr(78))          # N
-
-print('apple' < 'orange')       # True
-
-print('Apple' < 'aPPLE')        # True -> 65 < 97
-
-print('python' < 'pythoN')      # False -> 110 < 78
-
-print('pYTHON' < 'Python')      # p < P -> False
-
-print('data' < 'data')          # False -> 'a' < 'a'
-
-print('a' < 'abc')              # True
-
-print('abc' < 'a')              # False
+# print(41 < 41)      # False
+#
+# # print((3+3j) < (2+2j))  # TypeError
+#
+# print('B' < 'ABC')      # False -> 66 < 65 -> False
+#
+# print('a' < 'A')        # False -> 97 < 65 -> False
+#
+# print('A' < 'a')        # 65 < 97 -> True
+#
+# print(ord('e'))         # 101
+#
+# print(chr(78))          # N
+#
+# print('apple' < 'orange')       # True
+#
+# print('Apple' < 'aPPLE')        # True -> 65 < 97
+#
+# print('python' < 'pythoN')      # False -> 110 < 78
+#
+# print('pYTHON' < 'Python')      # p < P -> False
+#
+# print('data' < 'data')          # False -> 'a' < 'a'
+#
+# print('a' < 'abc')              # True
+#
+# print('abc' < 'a')              # False
 
 """
 For string,
 s1 < s2
-if ord(s1[0]) < ord(s1[0]) -> True
+if ord(s1[0]) < ord(s2[0]) -> True
 if ord(s1[0]) > ord(s2[0]) -> False
 if ord(s1[0]) == ord(s2[0]) -> compares ascii values of s1[1] and s2[1] and so on...............
- .......if ord(s1[-1]) == ord(s2[-1]) -> False
+ .......if ord(s1[-1]) == ord(s2[-1]) -> False 
 """
+
+# print([10, 2, 3] < [1, 90, 30])     # False
+#
+# print([10, 2, 30] < [10, 20, 3])    # True
+#
+# print(['apple', 'yaho0', 'gmail'] < ['apple', 'yahoO', 'gmail'])        # 0 < O -> True
+
+# print(['apple', 34, 'gmail'] < ['apple', 'yahoO', 'gmail'])     # TypeError
+
+"""
+For list,
+l1 < l2
+if l1[0] < l2[0] -> True
+if l1[0] > l2[0] -> False
+if l1[0] == l2[0] -> compare l1[1] and l2[1] and so on.........
+"""
+
+print({0, 1, 2} < {1, 2, 3})        # False
+
+print({33, 1} < {32, 1, 33})        # True
+
+print({1, 2} < {33, 44, 55})        # False
+
+print({0, 1} < {0.9, 0.6, 0.0, 0.67, 1})        # True
+
+"""
+For set,
+s1 < s2
+True -> if s1 is a subset of set2 or s2 is a superset of s1
+"""
+
+
 
 
 
