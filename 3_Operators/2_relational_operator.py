@@ -91,13 +91,13 @@ if l1[0] > l2[0] -> False
 if l1[0] == l2[0] -> compare l1[1] and l2[1] and so on.........
 """
 
-print({0, 1, 2} < {1, 2, 3})        # False
-
-print({33, 1} < {32, 1, 33})        # True
-
-print({1, 2} < {33, 44, 55})        # False
-
-print({0, 1} < {0.9, 0.6, 0.0, 0.67, 1})        # True
+# print({0, 1, 2} < {1, 2, 3})        # False
+#
+# print({33, 1} < {32, 1, 33})        # True
+#
+# print({1, 2} < {33, 44, 55})        # False
+#
+# print({0, 1} < {0.9, 0.6, 0.0, 0.67, 1})        # True
 
 """
 For set,
@@ -105,9 +105,36 @@ s1 < s2
 True -> if s1 is a subset of set2 or s2 is a superset of s1
 """
 
+###################################################################################
 
+# 4) Relational greater than operator (>)
 
+################################################################################
 
+# 5) Relational less than equal to (<=)
 
+print(6 <= 9)       # True
+
+# print((8+8j) <= (8+8j))     # TypeError
+
+print('APPLE' <= 'APPLe')    # True -> 'E' < 'e'
+
+print('python' <= 'Python')     # False - 'p' < 'P'
+
+print([6, 'pandas', 8.75] <= [5, 'pandas', 8.75])   # FAlse -> 6 <= 5
+
+print((9.3, 'hello', 98) <= (9.3, 'hello', 98))     # True -> compare 98 <= 98
+
+print({2, 3} <= {1, 2, 3})  # True -> s1 is subset of s2
+
+print({2, 3, 1} <= {1, 2, 3})   # True -> s1 is equal to s2
+
+print({3, 4} < {10, 20, 4, 30})     # False -> s1 is not subset of s2
+
+#############################################################################
+
+# 6) Relational greater than or equal to operator (>=)
+
+############################################################################
 
 
