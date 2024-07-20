@@ -59,3 +59,45 @@ print(0 or [] or {} or (0.0) or [0.0] or 0j)    # [0.0]
 
 print(0 or [] or {} or (0.0)  or 0j)        #  0j
 
+print(4>3 and 8>10)     # True and False - False
+
+
+ch = 'Y'
+
+# check whether the character is uppercase
+print(ord(ch) >= 65 and ord(ch) <= 90)
+print(65 <= ord(ch) <= 90)
+print('A' <= ch <= 'Z')
+
+# check whether character is lowercase
+print('a' <= ch <= 'z')
+
+# check whether character is a number
+print('0'<=ch<='9')
+
+ch = '9'
+# check whether character is an alphabet
+print('A' <= ch <= 'Z' or 'a' <= ch <= 'z')
+
+# check whether character is alphanumeric
+
+###################################################################################
+
+# 3) not operator
+"""
+-> It gives the result as True if the operand is default value and vice versa
+"""
+
+print(not 7)        # False
+
+print(not 76>90)        #  True
+
+print(not 'hai')        # False
+
+# check if ch is a special character
+
+ch = '@'
+print(not('A' <= ch <= 'Z' or 'a' <= ch <= 'z' or '0' <= ch <= '9'))
+
+
+
