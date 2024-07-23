@@ -91,3 +91,11 @@ else:
 
 # 7) WAP to print the lowest among 4 distinct numbers
 
+"""
+8) The temperature of a city varies between 15 to 43 both included. The weather of a
+   particular day is based on the average temperature. if the avg temperature is between 15 to 18, 
+   it is considered cold, if the temperature is between 18 to 35, it is considered as moderate, 
+   if the temperature is more than 35, it is considered as hot. WAP to print the 
+   weather condition based on the temperature
+"""
+
