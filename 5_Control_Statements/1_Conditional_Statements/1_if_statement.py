@@ -31,3 +31,7 @@ if 'A' <= char <= 'Z':
 # 9) WAP to check whether a given character is a digit
 
 # 10) WAP to check if a number is divisible by 5 but not a multiple of 10
+""" if num % 5 == 0 and num % 10 != 0 
+if num % 10 == 5 """
+
+
