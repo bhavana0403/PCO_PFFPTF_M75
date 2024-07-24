@@ -87,7 +87,12 @@
 
 # 6) WAP to find the second lowest among n1,  n2 , n3 and n4
 
-
+"""
+7) WAP to consider 2 inputs from the user, one for x co-ordinate another for y co-ordinate,
+   based on the values of x and y print the location of the point. output has to be 
+   origin or x-axis or y-axis or first quadrant or second quadrant or third quadrant
+   or fourth quadrant
+"""
 
 
 
