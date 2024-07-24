@@ -102,6 +102,11 @@ n         n//2
 
 # 15) WAP to check if a given number is a palindrome
 
+# num = int(input())
+# if str(num) == str(num)[::-1]:
+#     print('Palindrome')
+# else:
+#     print('Not a palindrome')
 
 
 
