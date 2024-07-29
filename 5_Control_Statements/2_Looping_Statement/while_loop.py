@@ -205,6 +205,20 @@ print(out)
 # 21) WAP to separate all the even numbers and odd numbers into 2 lists from a given homogenous list collection
 
 # 22) WAP to separate all the characters from a given string
+st = 'HelLo Wo$lD 7%$76'
+uc, lc, num, sc = '', '', '', ''
+i = 0
+while i < len(st):
+    if 'A' <= st[i] <= 'Z':
+        uc += st[i]
+    elif 'a' <= st[i] <= 'z':
+        lc+= st[i]
+    elif '0' <= st[i] <= '9':
+        num+= st[i]
+    else:
+        sc+= st[i]
+    i += 1
+print(uc, lc, num, sc, sep='\n')
 
 # 23) WAP to reverse a given string without using slicing
 
@@ -247,3 +261,35 @@ while i >= -len(st):
 print(f"The reverse of a given string '{st}' is '{rev}'")
 
 
+# method 3
+st = 'alex'
+rev = ''
+i = 0
+while i < len(st):
+    rev = st[i] + rev
+    i += 1
+print(f"The reverse of a given string '{st}' is '{rev}'")
+
+"""
+st = 'alex'
+
+rev = 'a' + '' = 'a'
+rev = 'l' + 'a' = 'la'
+rev = 'e' + 'la' = 'ela'
+rev = 'x' + 'ela' = 'xela'
+"""
+
+# 24) WAP to check if a given string is a palindrome or not without using slicing
+
+st = 'racecar'
+rev = ''
+i = 0
+while i < len(st):
+    rev = st[i] + rev
+    i += 1
+if rev == st:
+    print('The given string is a palindrome')
+else:
+    print('The given string is not a palindrome')
+
+# 25) WAP to check if a given number is a palindrome without typecasting or slicing
