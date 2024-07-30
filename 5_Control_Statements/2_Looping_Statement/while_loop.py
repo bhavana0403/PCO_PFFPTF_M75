@@ -293,3 +293,35 @@ else:
     print('The given string is not a palindrome')
 
 # 25) WAP to check if a given number is a palindrome without typecasting or slicing
+
+num = 757
+temp = num
+rev = 0
+while temp > 0:    # temp != 0
+    rev = rev*10 + temp%10
+    temp = temp // 10
+if num == rev:
+    print('Palindrome')
+else:
+    print('Not a palindrome')
+
+"""
+num = 758
+temp = 758 -> 75 -> 7 -> 0
+rev = 0 -> 8 -> 85 -> 857
+
+758 > 0 
+rev = 0*10 + 8 = 8
+temp = 758 // 10 = 75
+
+75 > 0
+rev = 8*10 + 5 = 85
+temp = 75 // 10 = 7
+
+7 > 0
+rev = 85*10 + 7 = 857
+temp = 7 // 10 = 0
+
+0 > 0 -> False
+"""
+
