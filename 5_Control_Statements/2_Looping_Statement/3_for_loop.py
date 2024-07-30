@@ -136,3 +136,46 @@ for i in range(len(st)):
 3 x
 """
 
+######################################################################################
+
+# 1) WAP to extract all the vowels in a given string
+
+st = 'thirtieth day of the month'
+vowels = ''
+for ch in st:
+    if ch in 'aeiouAEIOU':
+        vowels += ch
+print(vowels)       # iieaoeo
+
+for i in st:
+    if i in 'aeiouAEIOU':
+        print(i)
+
+# 2) WAP to extract all the float numbers from a given list
+
+"""
+3) WAP to extract all the string present in  a tuple to a dictionary where each string
+   is a key of the dictionary and the value is number of characters in the string
+"""
+
+t = ('apple', 'samsung', 'vivo', 'one plus')
+# {'apple': 5, 'samsung': 7, 'vivo': 4, 'one plus': 8}
+out = {}
+for i in t:
+    print(i)
+    out[i] = len(i)
+print(out)
+"""
+out['apple'] = 5
+out['samsung'] = 7
+.
+.
+"""
+
+# 4) WAP to count the number of occurrence of a given character in a string
+st = 'mississippi'
+ch = 's'
+# o/p = 4
+
+
+
