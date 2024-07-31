@@ -172,10 +172,14 @@ out['samsung'] = 7
 .
 """
 
-# 4) WAP to count the number of occurrence of a given character in a string
+# 4) WAP to count the number of occurrence of a given character in a string without using count
 st = 'mississippi'
 ch = 's'
 # o/p = 4
-
+count = 0
+for i in st:
+    if i == ch:
+        count += 1
+print(f"The number of occurrence of '{ch}' in '{st}' is {count}")
 
 
