@@ -182,4 +182,32 @@ for i in st:
         count += 1
 print(f"The number of occurrence of '{ch}' in '{st}' is {count}")
 
+# 5) WAP to get the following output
+"""
+st = 'abacaabbcaacb'
+# o/p = 'a6b4c3'
+"""
+st = 'abacaabbcaacb'
+res = ''
+for i in st:
+    if i not in res:
+        res += i + str(st.count(i))
+print(res)  # a6b4c3
+"""
+res = '' -> 'a6' -> 'a6b4' -> 'a6b4c3'
+
+'a' not in ''
+res = '' + 'a' + '6' = 'a6'
+
+'b' not in 'a6'
+res = 'a6' + 'b' + '4' = 'a6b4'
+
+'a' not in 'a6b4' -> False
+
+'c' not in 'a6b4' 
+res = 'a6b4' + 'c' + '3' = 'a6b4c3'
+"""
+
+
+
 
