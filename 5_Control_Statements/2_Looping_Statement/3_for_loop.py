@@ -247,6 +247,55 @@ for i in range(len(li)):        # i takes all the index numbers of li
         res.append(li[i])
 print(res)
 
+# 11) WAP to check if a given list is homogenous
+
+# 12) WAP to create a list of all the factors of a given number
+"""
+8 -> [1, 2, 4, 8]
+12 -> [1, 2, 3, 4, 6, 12]
+7 -> [1, 7]
+15 -> [1, 3, 5, 15]
+"""
+num = 100
+factors = []
+for n in range(1, num+1):
+    if num % n == 0:
+        factors.append(n)
+print(factors)
+
+# 13) WAP to check if a given number is a perfect number
+"""
+6 -> 1 + 2 + 3 = 6 -> perfect number
+8 -> 1 + 2 + 4 = 7 -> not a perfect number
+28 -> 1 + 2 + 4 + 7 + 14 = 28 -> perfect number
+"""
+
+num = 128
+sum_of_factors = 0
+for i in range(1, num//2 + 1):
+    if num % i == 0:
+        sum_of_factors += i
+if sum_of_factors == num:
+    print('Perfect number')
+else:
+    print('not a perfect number')
+
+# 14) WAP to reverse key and values of the dictionary
+
+d = {'apple': 120, 'orange': 60, 'banana': 90, 'pineapple': 110}
+# o/p = {120: 'apple', 60: 'orange', 90: 'banana', 110: 'pineapple'}
+
+res = {}
+for i in d:
+    res[d[i]] = i
+print(res)      # {120: 'apple', 60: 'orange', 90: 'banana', 110: 'pineapple'}
+
+"""
+res[120] = 'apple'
+res[60] = 'orange'
+"""
+
+# 15) WAP to check if a given number is a prime number
 
 
 
