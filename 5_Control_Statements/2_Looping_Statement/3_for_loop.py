@@ -208,6 +208,48 @@ res = 'a6' + 'b' + '4' = 'a6b4'
 res = 'a6b4' + 'c' + '3' = 'a6b4c3'
 """
 
+"""
+6) 
+st = 'abacaabbcaacb'
+o/p = {'a': 6, 'b': 4, 'c': 3}
+without using count
+"""
+st = 'abacaabbcaacb'
+res = {}
+for i in st:
+    if i not in res:
+        res[i] = 1
+    else:
+        res[i] += 1
+print(res)
+
+# 7) WAP to find the length of a list without using len
+
+li = [89, 9.78, True, 'hai', (9+8j), 75]
+count = 0
+for _ in li:        # throw away variable
+    count += 1
+print(count)
+
+# 8) WAP to remove the duplicate values from the string
+st = 'mississippi'
+# o/p = misp
+
+
+# 9) WAP to create a tuple of 'n' natural numbers along with it's cube
+
+# 10) WAP to extract all the even numbers present at odd indices of a given list
+
+li = [2, 1, 4, 2, 7, 6, 3, 2, 9, 8, 22, 80, 88]
+res = []
+for i in range(len(li)):        # i takes all the index numbers of li
+    if i % 2 != 0 and li[i] % 2  == 0:
+        res.append(li[i])
+print(res)
+
+
+
+
 
 
 
