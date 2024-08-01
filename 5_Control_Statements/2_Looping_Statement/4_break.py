@@ -94,8 +94,20 @@ for i in range(2, round(sqrt(num))+1):
 else:
     print('Prime number')
 
+# 8) WAP to check if a given string has only alphabets
+st = 'HeLlo'
+for i in st:
+    if not ('A' <= i <= 'Z' or 'a' <= i <= 'z'):
+        print(False)
+        break
+else:
+    print(True)
 
 
+# 9) WAP to check if a given string has only uppercase characters
+# 10) WAP to check if a given string has only lowercase characters
+# 11) WAP to check if a given string has only numeric characters
+# 12) WAP to check if a given string has only special characters
 
 
 
