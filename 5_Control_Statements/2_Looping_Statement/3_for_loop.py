@@ -268,6 +268,7 @@ print(factors)
 6 -> 1 + 2 + 3 = 6 -> perfect number
 8 -> 1 + 2 + 4 = 7 -> not a perfect number
 28 -> 1 + 2 + 4 + 7 + 14 = 28 -> perfect number
+15 -> 1 + 3 + 5 = 8
 """
 
 num = 128
