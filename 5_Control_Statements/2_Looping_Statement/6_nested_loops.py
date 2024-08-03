@@ -183,6 +183,61 @@ while True:
 # 14) WAP to print 'n'th Armstrong number
 # 15) WAP to print 'n'th Harshad number
 
+# 16) WAP to print 'n' fibonacci numbers
+"""
+0 1 1 2 3 5 8 13 21 34.............. 
+n = 5 -> 0 1 1 2 3
+n = 10 -> 0 1 1 2 3 5 8 13 21 34
+"""
+
+n = 6
+num1 = 0
+num2 = 1
+if n == 1:
+    print(num1)
+else:
+    print(num1, num2, sep='\n')
+    count = 2       # 2 fibonacci numbers are printed
+    while count < n:
+        num3 = num1 + num2
+        num1 = num2
+        num2 = num3
+        print(num2)
+        count += 1
+
+"""
+n = 6
+num1 = 0 -> 1 -> 1 -> 2 -> 3
+num2 = 1 -> 1 -> 2 -> 3 -> 5
+o/p -> 0 1 1 2 3 5
+count = 2 -> 3 -> 4 -> 5 -> 6
+
+2 < 6 -> True
+num3 = 0 + 1 = 1
+num1 = 1
+num2 = 1
+count = 2 + 1 = 3
+
+3 < 6 -> True
+num3 = 1 + 1 = 2
+num1 = 1
+num2 = 2
+
+4 < 6 -> True
+num3 = 1 + 2 = 3
+num1 = 2
+num2 = 3
+
+5 < 6 -> True
+num3 = 2 + 3 = 5
+num1 = 3
+num2 = 5
+
+6 < 6 -> False -> Exit
+"""
+
+
+
 
 
 
