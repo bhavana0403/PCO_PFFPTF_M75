@@ -90,6 +90,23 @@ for num in range(1, 6):
 print(num_factorial)        # [(1, 1), (2, 2), (3, 6), (4, 24), (5, 120)]
 
 
+# 3) WAP to get the following output
+
+num_list = [[1, 2, 3, 4], [10, 12, 18], [8, 9], [10, 3, 4, 2, 1]]
+# o/p = [10, 40, 17, 20]
+res = []
+for li in num_list:
+    s = 0
+    for num in li:
+        s += num
+    res.append(s)
+print(res)      # [10, 40, 17, 20]
+
+
+# 4)
+
+
+
 
 
 
