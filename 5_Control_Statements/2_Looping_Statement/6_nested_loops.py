@@ -103,9 +103,85 @@ for li in num_list:
 print(res)      # [10, 40, 17, 20]
 
 
-# 4)
+# 4) WAP to print all the prime numbers between the range m and n
+"""
+m = 1
+n = 20
+# o/p -> 2 3 5 7 11 13 17 19
+"""
+from math import sqrt
+m, n = 1, 20
+for num in range(m, n+1):
+    if num > 1:
+        for i in range(2, round(sqrt(num))+1):
+            if num % i == 0:
+                break
+        else:
+            print(num)
 
+# 5) WAP to print all the perfect numbers between the range m, n
+# 6) WAP to print all the Armstrong numbers between the range m, n
+"""
+370 -> 3**3 + 7**3 + 0**3 = 27 + 343 + 0 = 370 -> Armstrong
+371 -> 3**3 + 7**3 + 1**3 = 27 + 343 + 1 = 371 -> Armstrong
+123 -> 1**3 + 2**3 + 3**3 = 1 + 8 + 27 = 36 -> no
+1634 -> 1**4 + 6**4 + 3**4 + 4**4 = 1634 -> Armstrong
+"""
+# 7) WAP to print all the harshad numbers between the range m, n
+"""
+if a number is exactly divisible by sum of it's digits then the number is called as
+Harshad number 
+45 -> 4 + 5 = 9 -> 45 % 9 == 0 -> True -> Harshad number
+80 -> 8 + 0 = 8 -> 80 % 8 == 0 -> True -> Harshad number
+22 -> 2 + 2 = 4 -> 22 % 4 == 0 -> False -> No
+"""
 
+# 8) WAP to print 'n' prime numbers
+"""
+n = 5 -> 2 3 5 7 11
+n = 10 -> 2 3 5 7 11 13 17 19 23 29
+"""
+n = 10
+num = 2
+count = 0
+while True:
+    for i in range(2, round(sqrt(num)) + 1):
+        if num % i == 0:
+            break
+    else:
+        print(num)
+        count += 1
+    if count == n:
+        break
+    num += 1
+
+# 9) WAP to print 'n' perfect numbers
+# 10) WAP to print 'n' Armstrong numbers
+# 11) WAP to print 'n' Harshad numbers
+
+# 12) WAP to print 'n'th prime number
+"""
+n = 7 -> 17
+n = 10 -> 29 
+n = 4 -> 7
+"""
+n = 5
+num = 2
+count = 0
+while True:
+    for i in range(2, round(sqrt(num)) + 1):
+        if num % i == 0:
+            break
+    else:
+        count += 1
+    if count == n:
+        print(num)
+        break
+    num += 1
+
+# 13) WPA to print 'n'th perfect number
+# 14) WAP to print 'n'th Armstrong number
+# 15) WAP to print 'n'th Harshad number
 
 
 

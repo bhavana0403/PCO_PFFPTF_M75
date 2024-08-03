@@ -84,7 +84,7 @@ print(f"The first vowel in the string is '{i}' and is present {count} number of 
 
 # 7) WAP to check whether a given number is a prime number
 
-# num = 999983
+# num = 289
 # """
 # 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 18 19 20
 # """

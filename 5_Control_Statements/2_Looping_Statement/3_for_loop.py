@@ -256,7 +256,7 @@ print(res)
 7 -> [1, 7]
 15 -> [1, 3, 5, 15]
 """
-num = 100
+num = 343
 factors = []
 for n in range(1, num+1):
     if num % n == 0:
