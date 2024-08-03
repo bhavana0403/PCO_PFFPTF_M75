@@ -45,6 +45,53 @@ print(res)          # [6, 11, 8]
 
 # o/p = {'python': 6, 'programming': 11, 'language': 8}
 
+# 2) WAP to create a list of numbers from 1 to 5 along with it's factorial
+
+# o/p = [(1, 1), (2, 2), (3, 6), (4, 24), (5, 120)]
+
+num_factorial = []      # [] -> [(1, 1)] -> [(1, 1), (2, 2)] -> [(1, 1), (2, 2), (3, 6)] -> [(1, 1), (2, 2), (3, 6), (4, 24)] -> [(1, 1), (2, 2), (3, 6), (4, 24), (5, 120)]
+
+# num = 1
+# fact = 1
+# for i in range(1, num+1):
+#     fact *= i
+# num_factorial.append((num, fact))
+#
+# num = 2
+# fact = 1
+# for i in range(1, num+1):
+#     fact *= i
+# num_factorial.append((num, fact))
+#
+# num = 3
+# fact = 1
+# for i in range(1, num+1):
+#     fact *= i
+# num_factorial.append((num, fact))
+#
+# num = 4
+# fact = 1
+# for i in range(1, num+1):
+#     fact *= i
+# num_factorial.append((num, fact))
+#
+# num = 5
+# fact = 1
+# for i in range(1, num+1):
+#     fact *= i
+# num_factorial.append((num, fact))
+
+num_factorial = []
+for num in range(1, 6):
+    fact = 1
+    for i in range(1, num+1):
+        fact *= i
+    num_factorial.append((num, fact))
+print(num_factorial)        # [(1, 1), (2, 2), (3, 6), (4, 24), (5, 120)]
+
+
+
+
 
 
 
