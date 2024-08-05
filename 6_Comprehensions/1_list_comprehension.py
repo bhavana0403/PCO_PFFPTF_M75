@@ -70,7 +70,47 @@ _vowels1 = ''.join([ch for ch in st if ch in 'aeiouAEIOU'])
 print(_vowels1)     # oeeio
 
 
+# WAP to extract all the names starting with a in the given string
 
+st = 'alex steve eve anthony alexander bob anitha aira'
+res = []
+for name in st.split():
+    if name.startswith('a'):
+        res.append(name)
+print(res)      # ['alex', 'anthony', 'alexander', 'anitha', 'aira']
+
+
+_res = [name for name in st.split() if name.startswith('a')]
+print(_res)     # ['alex', 'anthony', 'alexander', 'anitha', 'aira']
+
+# WAP to create a list of odd numbers in the range of 1 to 20
+res1 = [num for num in range(1, 21) if num % 2 == 1]
+print(res1)     # [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+
+res2 = [num for num in range(1, 21) if num % 2]
+print(res2)     # [1, 3, 5, 7, 9, 11, 13, 15, 17, 19]
+
+# WAP to separate first names and last names from full names
+names = ['steve jobs', 'bill gates', 'michael jackson', 'mukesh ambani', 'ratan tata']
+first_name = [name.split()[0] for name in names]
+last_name = [name.split()[1] for name in names]
+print(first_name)       # ['steve', 'bill', 'michael', 'mukesh', 'ratan']
+print(last_name)        # ['jobs', 'gates', 'jackson', 'ambani', 'tata']
+
+# WAP to extract all the strings with even length from a given list
+li = ['python', 'science', 'data', 'manual', 'webtech']
+res = [word for word in li if len(word) % 2 == 0]
+print(res)      # ['python', 'data', 'manual']
+
+# WAP to create a list of numbers from 1 to 10 along with it's factorial
+
+from math import factorial
+print(factorial(7))     # 5040
+
+res = [(i, factorial(i)) for i in range(1, 11)]
+print(res)
+
+######################################################################################
 
 
 
