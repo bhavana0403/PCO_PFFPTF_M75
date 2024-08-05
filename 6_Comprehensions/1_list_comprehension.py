@@ -3,6 +3,7 @@
 Syntax:
         [val_to_be_appended for_loop]
         [val_to_be_appended  for_loop   if <cond>]
+        [true_value if <cond> else false_value  for_loop]
 """
 st = 'hello world'
 print(list(st))     # ['h', 'e', 'l', 'l', 'o', ' ', 'w', 'o', 'r', 'l', 'd']
@@ -112,6 +113,34 @@ print(res)
 
 ######################################################################################
 
+# WAP to create a list of numbers along with it's square if the number is even, if the number is odd extract it along with it's cube
+
+# [(1, 1), (2, 4), (3, 27), (4, 16), .........., (9, 729), (10, 100)]
+
+res = [(num, num**2) if num % 2 == 0 else (num, num**3) for num in range(1, 11)]
+print(res)
+
+# reverse the string in a list if length is even else keep it as it is
+
+words = ['python', 'science', 'data', 'manual', 'webtech']
+res = [word[::-1] if len(word) % 2 == 0 else word for word in words]
+print(res)      # ['nohtyp', 'science', 'atad', 'launam', 'webtech']
+
+#####################################################################################
+
+# WAP to filter all the languages starting with 'p' or 'P'
+languages = ['Python', 'persian', 'java', 'kannada', 'php', 'Pearl']
+res1 = [language for language in languages if language[0] in 'pP']
+res2 = [language for language in languages if language[0].lower() == 'p']
+res3 = [language for language in languages if language.startswith('p') or language.startswith('P')]
+print(res1, res2, res3, sep='\n')
+"""
+['Python', 'persian', 'php', 'Pearl']
+['Python', 'persian', 'php', 'Pearl']
+['Python', 'persian', 'php', 'Pearl']
+"""
+
+#######################################################################################
 
 
 
