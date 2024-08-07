@@ -54,11 +54,11 @@ User Defined Functions are classified into 4 types
 
 # WAP to reverse the given string
 
-st = 'hello'
-rev = ''
-for ch in st:
-    rev = ch + rev
-print(rev)
+# st = 'hello'
+# rev = ''
+# for ch in st:
+#     rev = ch + rev
+# print(rev)
 
 # Type1
 
@@ -80,7 +80,7 @@ def reverse1():
         rev = ch + rev
     print(rev)
 
-reverse1()
+# reverse1()
 
 # WAP to print all even numbers in a list
 
@@ -90,7 +90,7 @@ def even_num():
         if num % 2 == 0:
             print(num)
 
-even_num()
+# even_num()
 
 
 # Type 2
@@ -98,7 +98,7 @@ even_num()
 def sam(name, empid):
     print(f"Hello, I'm {name}, my employee ID is {empid}")
 
-sam("John", "ABC123")
+# sam("John", "ABC123")
 
 st = 'hello'
 def reverse2(st):
@@ -107,23 +107,23 @@ def reverse2(st):
         rev = ch + rev
     print(rev)
 
-reverse2(st)        # 'olleh'
-a = 'python'
-reverse2(a)         # nohtyp -> reverse2('python')
-reverse2("manual")  # launam
+# reverse2(st)        # 'olleh'
+# a = 'python'
+# reverse2(a)         # nohtyp -> reverse2('python')
+# reverse2("manual")  # launam
 
 # Type 4 - with args, with return value
 
 def calc(a, b):
     return a+b, a-b, a*b, a/b
 
-calc(4, 2)
-print(calc(4, 2))       # (6, 2, 8, 2.0)
-res = calc(4, 2)
-print(res)      # (6, 2, 8, 2.0)
-
-add, sub, mul, div = calc(4, 2)
-print(add, sub, mul, div, sep='\n')
+# calc(4, 2)
+# print(calc(4, 2))       # (6, 2, 8, 2.0)
+# res = calc(4, 2)
+# print(res)      # (6, 2, 8, 2.0)
+#
+# add, sub, mul, div = calc(4, 2)
+# print(add, sub, mul, div, sep='\n')
 """
 6
 2
@@ -148,7 +148,7 @@ def reverse4(st):
         rev = ch + rev
     return rev
 
-print(reverse4('hello'))
+# print(reverse4('hello'))
 
 
 # Type 3
@@ -160,8 +160,83 @@ def reverse3():
         rev = i + rev
     return rev
 
-print(reverse3())   # olleh
-res = reverse3()
-print(res)
+# print(reverse3())   # olleh
+# res = reverse3()
+# print(res)
+#
 
+###################################################################################
+
+# WAP to check if a given number is prime number
+num = 10
+for i in range(2, num//2 + 1):
+    if num % i == 0:        # if i is a factor of num
+        print(False)
+        break
+else:
+    print(True)
+
+# type2 - with args without return
+
+def is_prime2(num):
+    if num > 1:
+        for i in range(2, num // 2 + 1):
+            if num % i == 0:  # if i is a factor of num
+                print(False)
+                break
+        else:
+            print(True)
+
+
+is_prime2(7)        # True
+is_prime2(18)       # False
+
+# type4 - with arg with return val
+
+def is_prime4(num):
+    if num > 1:
+        for i in range(2, num//2 + 1):
+            if num % i == 0:
+                return False
+        return True
+
+print(is_prime4(8))     # False
+print(is_prime4(7))     # True
+
+num = 7
+if is_prime4(num) == True:
+    print('The given number is a prime number')
+else:
+    print('The given number is not a prime number')
+
+# program to print all the prime numbers between the range 1, 100
+
+for i in range(1, 101):
+    if is_prime4(i) == True:
+        print(i)
+
+# Type1
+def is_prime1():
+    num = 4
+    if num > 1:
+        for i in range(2, num // 2 + 1):
+            if num % i == 0:  # if i is a factor of num
+                print(False)
+                break
+        else:
+            print(True)
+
+is_prime1()
+
+# Type 3
+
+def is_prime3():
+    num = 61
+    if num > 1:
+        for i in range(2, num//2 + 1):
+            if num % i == 0:
+                return False
+        return True
+
+print(is_prime3())  # 61
 
