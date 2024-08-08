@@ -26,4 +26,36 @@ print(list(_res2))      # [1, 4, 9, 16]
 
 print(list(map(lambda num: num**2, nums)))      # [1, 4, 9, 16]
 
+# square and cube of numbers from 1 to 5
+sq_cube = lambda num: (num**2, num**3)
+res1 = map(sq_cube, range(1, 6))
+print(list(res1))       # [(1, 1), (4, 8), (9, 27), (16, 64), (25, 125)]
+
+res2 = map(lambda num: (num**2, num**3), range(1, 6))
+print(list(res2))    # [(1, 1), (4, 8), (9, 27), (16, 64), (25, 125)]
+
+# check if names are palindrome
+names = ['steve', 'eve', 'alex', 'gagan', 'bob']
+check = lambda name: name == name[::-1]
+res = map(check, names)
+print(list(res))    # [False, True, False, False, True]
+
+######################################################################################
+l1 = ['a', 'b', 'c', 'd']
+l2 = [1, 2, 3, 4]
+# [('a', 1), ('b', 2), ('c', 3), ('d', 4)]
+
+a = lambda item1, item2: (item1, item2)
+print(a(1, 2))  # (1, 2)
+
+res = map(lambda item1, item2: (item1, item2), l1, l2)
+print(list(res))    # [('a', 1), ('b', 2), ('c', 3), ('d', 4)]
+
+l1 = ['a', 'b']
+l2 = [1, 2, 3, 4]
+res = map(lambda item1, item2: (item1, item2), l1, l2)
+print(list(res))    # [('a', 1), ('b', 2)]
+
+
+
 
