@@ -240,3 +240,28 @@ def is_prime3():
 
 print(is_prime3())  # 61
 
+###################################################################################
+
+# WAP to extract all the even numbers in a given heterogenous list
+
+l = [12, 'hai', 23, 122, 98, 77]
+res = []
+for i in l:
+    if type(i) == int and i % 2 == 0:
+        res.append(i)
+print(res)
+
+# WAP to check if a given number is a palindrome
+
+num = 757
+temp = num
+rev = 0
+while temp > 0:    # temp != 0
+    rev = rev*10 + temp%10
+    temp = temp // 10
+if num == rev:
+    print(True)
+else:
+    print(False)
+
+
