@@ -46,3 +46,26 @@ evens = filter(lambda num: num % 2 == 0, range(1, 21))
 # print(list(evens))
 square = map(lambda num: num ** 2, evens)
 print(list(square))     #
+
+# WAP to extract all prime numbers in the range of 1 to 100
+
+def is_prime(num):
+    if num > 1:
+        for i in range(2, num//2 + 1):
+            if num % i == 0:
+                return False
+        return True
+
+prime_nos = filter(is_prime, range(1, 101))
+print(list(prime_nos))
+
+# WAP to count the number of occurrences of a given character in a string using typ2 and type 4 functions
+
+st = 'mississippi'
+ch = 's'
+c = 0
+for i in st:
+    if i == ch:
+        c += 1
+print(c)
+
