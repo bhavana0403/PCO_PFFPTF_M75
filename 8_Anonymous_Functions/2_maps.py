@@ -56,6 +56,35 @@ l2 = [1, 2, 3, 4]
 res = map(lambda item1, item2: (item1, item2), l1, l2)
 print(list(res))    # [('a', 1), ('b', 2)]
 
+# WAP to create a list of factorial of numbers from 1 to 10
+
+from math import factorial
+_res = map(factorial, range(1, 11))
+print(list(_res))       # [1, 2, 6, 24, 120, 720, 5040, 40320, 362880, 3628800]
+
+# WAP to get the following output
+li = ['good', 'evening', 'all']
+# o/p1 = [4, 5, 3]
+# o/p2 = ['GOOD', 'EVENING', 'ALL']
+res1 = map(len, li)
+print(list(res1))       # [4, 7, 3]
+
+res2 = map(str.upper, li)
+print(list(res2))       # ['GOOD', 'EVENING', 'ALL']
+"""
+Whenever we want to use method inside map we write the method as 
+        map(cls.mname, iterable)
+"""
+
+nums = [-7, 76, -377, -78, 23, -54, -6, -3]
+# o/p = [7, 76, 377, 78, 23, 54, 6, 3]
+
+res = map(abs, nums)
+print(list(res))        # [7, 76, 377, 78, 23, 54, 6, 3]
+
+
+
+
 
 
 
