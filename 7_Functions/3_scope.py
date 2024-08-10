@@ -17,13 +17,13 @@
 NameError
 """
 
-a = 10
-def sam():
-    a = 20          # local variable of sam
-    print(a)
-print(a)
-sam()
-print(a)
+# a = 10
+# def sam():
+#     a = 20          # local variable of sam
+#     print(a)
+# print(a)
+# sam()
+# print(a)
 """
 10
 20
@@ -40,4 +40,57 @@ local variables - these are the variables which gets created inside function are
 """
 # sum = 8
 # print(sum([1, 2, 3]))       # TypeError
+
+# a = 10
+# def outer():
+#     print(a)
+#     a = 20
+#     print(a)
+# print(a)
+# outer()
+"""
+10
+UnboundLocalError
+"""
+
+"""
+-> To access and modify the global variable inside the function we make use of keyword
+    called 'global'
+-> global has to be the first argument inside the function area
+-> global has to followed by variables that needs to be modified
+-> address of global variable will be stored in function area 
+"""
+
+# a = 10
+# def outer():
+#     global a
+#     print(a)
+#     a = 20
+#     print(a)
+# print(a)
+# outer()
+# print(a)
+"""
+10
+10
+20
+20
+"""
+
+p = 1
+q = 2
+def outer():
+    global p
+    p = 3           # modifies global variable
+    q = 4           # local var for outer
+    print(p, q)
+print(p, q)
+outer()
+print(p, q)
+
+"""
+1 2
+3 4
+3 2
+"""
 
