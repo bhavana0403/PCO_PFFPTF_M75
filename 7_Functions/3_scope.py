@@ -17,13 +17,13 @@
 NameError
 """
 
-# a = 10
-# def sam():
-#     a = 20          # local variable of sam
-#     print(a)
-# print(a)
-# sam()
-# print(a)
+a = 10
+def sam():
+    a = 20          # local variable of sam
+    print(a)
+print(a)
+sam()
+print(a)
 """
 10
 20
@@ -77,20 +77,113 @@ UnboundLocalError
 20
 """
 
-p = 1
-q = 2
-def outer():
-    global p
-    p = 3           # modifies global variable
-    q = 4           # local var for outer
-    print(p, q)
-print(p, q)
-outer()
-print(p, q)
+# p = 1
+# q = 2
+# def outer():
+#     global p
+#     p = 3           # modifies global variable
+#     q = 4           # local var for outer
+#     print(p, q)
+# print(p, q)
+# outer()
+# print(p, q)
 
 """
 1 2
 3 4
 3 2
 """
+
+###################################################################################
+
+# m = 1
+# def outer():
+#     m = 2               # local var for outer
+#     def inner():
+#         m = 3           # local var for inner
+#         print(m)
+#     print(m)
+#     inner()
+#     print(m)
+#
+# outer()
+# print(m)
+"""
+2
+3
+2
+1
+"""
+
+
+# m = 1
+# def outer():
+#     m = 2               # local var for outer
+#     def inner():
+#         print(m)
+#     print(m)
+#     inner()
+#     print(m)
+#
+# outer()
+# print(m)
+"""
+2
+2
+2
+1
+"""
+
+# m = 1
+# def outer():
+#     def inner():
+#         print(m)
+#     print(m)
+#     inner()
+#     print(m)
+#
+# outer()
+# print(m)
+
+
+def outer():
+    m = 1
+    def inner():
+        m = 2
+        print(m)
+    print(m)
+    inner()
+    print(m)
+
+outer()
+"""
+1
+2
+1
+"""
+
+"""
+-> To modify a local variable inside nested function we make use of 'nonlocal'
+   keyword
+"""
+def outer():
+    m = 1
+    def inner():
+        nonlocal m
+        print(m)
+        m = 2
+        print(m)
+    print(m)
+    inner()
+    m = 4
+    print(m)
+
+outer()
+"""
+1
+1
+2
+4
+"""
+
 
