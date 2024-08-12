@@ -88,3 +88,48 @@ sam(10, c=30, b=20)         # The values of a, b and c are 10, 20 and 30
 # st = 'mississippi'
 # # print(st.count())       # TypeError: count() takes at least 1 argument (0 given)
 
+# WAP to find the sum of minimum 2 numbers, max 4 numbers
+
+def sum_of_num(a, b, c=0, d=0):
+    print(a + b + c + d)
+
+
+sum_of_num(1, 2)
+sum_of_num(1, 2, 3)
+sum_of_num(1, 2, 3, 4)
+sum_of_num(1, b=2, d=4)
+sum_of_num(a=1, b=2, c=5)
+# sum_of_num(1, 2, 3, 4, 5)       # TypeError
+
+# WAP to find the product of minimum 2 numbers and max 4 numbers
+
+"""
+WAP to count the numebr of occurrence of given character in a given string between
+the specified limits only if mentioned
+"""
+
+
+"""
+-11	-10	-9	-8	-7	-6	-5	-4	-3	-2	-1
+ m 	 i	 s	 s	 i	 s	 s	 i	 p	 p	 i
+ 0	 1	 2	 3	 4	 5	 6	 7	 8	 9	 10
+"""
+def _count(st, ch, SI=0, EI=0):
+    if EI == 0:
+        EI = len(st)
+    count = 0
+    for i in range(SI, EI):
+        if st[i] == ch:
+            count += 1
+    print(count)
+
+st = 'mississippi'
+_count(st, 's', 4)  # 2
+_count(st, 'i')         # 4
+_count(st, 's', 5, 10)  # 2
+
+# create a function same as index
+
+
+
+
