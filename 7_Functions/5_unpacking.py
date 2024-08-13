@@ -75,5 +75,14 @@ print(*d)               # a b c d
 print(*d.values())      # 1 2 3 4
 print(*d.items())       # ('a', 1) ('b', 2) ('c', 3) ('d', 4)
 
+l1 = [11, 22, 33, 44, 55, 66]
+
+*rest, a = l1
+print(a, rest)  # 66 [11, 22, 33, 44, 55]
+
+a, *rest, b = l1
+print(a, b, rest)       # 11 66 [22, 33, 44, 55]
+
+
 
 
