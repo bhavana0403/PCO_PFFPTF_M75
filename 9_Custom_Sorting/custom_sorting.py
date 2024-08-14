@@ -51,4 +51,55 @@ print(sorted(words, key=len, reverse=True))     # ['everyone', 'welcome', 'pytho
 
 #####################################################################################
 
+words = ['hello', 'everyone', 'welcome', 'to', 'python', 'class']
+
+def find_len(st):
+    c = 0
+    for _ in st:
+        c += 1
+    return c
+
+print(sorted(words, key=find_len))      # ['to', 'hello', 'class', 'python', 'welcome', 'everyone']
+
+######################################################################################
+
+names = ['alex', 'steve', 'eve', 'joseph', 'john', 'stella']
+
+def first_char(st):
+    return st[0]
+
+
+print(sorted(names))                    # ['alex', 'eve', 'john', 'joseph', 'stella', 'steve']
+
+print(sorted(names, key=first_char))    # ['alex', 'eve', 'joseph', 'john', 'steve', 'stella']
+
+print(sorted(names, key=lambda st: st[0]))  # ['alex', 'eve', 'joseph', 'john', 'steve', 'stella']
+
+####################################################################################
+
+d = {'hello': 5, 'everyone': 8, 'good': 4, 'evening': 7}
+
+print(d.items())    # [('hello', 5), ('everyone', 8), ('good', 4), ('evening', 7)]
+
+print(sorted(d.items()))    # [('evening', 7), ('everyone', 8), ('good', 4), ('hello', 5)]
+
+# sort based on keys
+print(sorted(d.items(), key=lambda val: val[0]))        # [('evening', 7), ('everyone', 8), ('good', 4), ('hello', 5)]
+
+# sort based on values
+print(sorted(d.items(), key=lambda val: val[-1]))       # [('good', 4), ('hello', 5), ('evening', 7), ('everyone', 8)]
+
+# sort based on last character of the key
+print(sorted(d.items(), key=lambda val: val[0][-1]))    # [('good', 4), ('everyone', 8), ('evening', 7), ('hello', 5)]
+
+#####################################################################################
+
+d = {'hello': 'everyone', 'happy': 'holidays', 'well': 'done', 'good': 'handwriting'}
+
+# sort based on length of key
+# sort based on length of value
+# sort based on first character of key
+# sort based on last character of value
+
+##################################################################################
 
