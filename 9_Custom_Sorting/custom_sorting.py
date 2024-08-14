@@ -103,3 +103,72 @@ d = {'hello': 'everyone', 'happy': 'holidays', 'well': 'done', 'good': 'handwrit
 
 ##################################################################################
 
+prices = {
+    'ACME': 45.23,
+    'AAPL': 634.97,
+    'IBM': 254.9,
+    'HPQ': 49.98,
+    'FB': 10.75
+}
+
+# sort based on prices
+print(sorted(prices.items(), key=lambda item: item[-1]))        # [('FB', 10.75), ('ACME', 45.23), ('HPQ', 49.98), ('IBM', 254.9), ('AAPL', 634.97)]
+
+# sort based on names
+print(sorted(prices.items(), key=lambda item: item[0]))     # [('AAPL', 634.97), ('ACME', 45.23), ('FB', 10.75), ('HPQ', 49.98), ('IBM', 254.9)]
+
+# print the smallest and largest priced share along with their share names
+
+smallest, *rest, largest = sorted(prices.items(), key=lambda item: item[-1])
+print(smallest)     # ('FB', 10.75)
+print(largest)      # ('AAPL', 634.97)
+
+# print the second largest priced share
+
+*rest, second_largest, largest = sorted(prices.items(), key=lambda item: item[-1])
+print(second_largest)       # ('IBM', 254.9)
+
+# print the first 2 least priced share
+# print first 2 most priced share
+
+#################################################################################
+
+# get the largest and smallest word in the sentence
+
+st = 'python is a programming language'
+
+words = st.split()
+smallest, *rest, largest = sorted(words, key=len)
+print(smallest, largest)        # a programming
+
+# print the smallest and largest non-repeating word
+st = 'python is a programming language programming is fun'
+words = [word for word in st.split() if st.split().count(word) == 1]
+print(words)        # ['python', 'a', 'language', 'fun']
+
+smallest, *rest, largest = sorted(words, key=len)
+print(smallest, largest)        # a language
+
+####################################################################################
+
+# check the anagram string
+
+st1 = 'fare'
+st2 = 'fear'
+def is_anagram(st1, st2):
+    return sorted(st1) == sorted(st2)
+
+# group anagram strings
+
+st = ['ate', 'listen', 'tea', 'eat', 'fear', 'silent', 'dare', 'read', 'dear', 'fare', 'are', 'era']
+
+anagram_group = {}
+for word in st:
+    key = ''.join(sorted(word))
+    if key not in anagram_group:
+        anagram_group[key] = [word]
+    else:
+        anagram_group[key] += [word]
+print(anagram_group)
+print(*anagram_group.items(), sep='\n')
+
