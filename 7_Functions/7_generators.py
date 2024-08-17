@@ -139,23 +139,58 @@ def spam_gen():
     yield 30
 
 
-res = spam_gen()
-print(next(res))
+# res = spam_gen()
+# print(next(res))
 """
 Hello
 10
 """
 
-print(next(res))
+# print(next(res))
 """
 Good evening
 20
 """
 
-print(next(res))
+# print(next(res))
 """
 how are you
 30
 """
 
 # print(next(res))    # StopIteration
+
+######################################################################################
+
+# generate infinite even numbers
+
+def even_gen():
+    num = 1
+    while True:
+        if num % 2 == 0:
+            yield num
+        num += 1
+
+print(even_gen())   # <generator object even_gen at 0x00000283BFF55480>
+res = even_gen()
+print(next(res))    # 2
+for i in range(1, 101):
+    print(next(res))
+
+# list of names starting with vowel using generators
+
+names = ['alex', 'iqual', 'eve', 'bob', 'clare', 'uday']
+
+def vowel_names(iterable):
+    for name in iterable:
+        if name[0] in 'aeiouAEIOU':
+            yield name
+
+res = vowel_names(names)
+print(next(res))       # alex
+print(list(res))        # ['iqual', 'eve', 'uday']
+
+###################################################################################
+
+# generate infinte prime numbers
+# extract all strings in given list using generators
