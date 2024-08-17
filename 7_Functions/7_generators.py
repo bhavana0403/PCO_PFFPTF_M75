@@ -102,5 +102,60 @@ _res = _even()
 
 #####################################################################################
 
+def spam():
+    print('Hello')
+    return 1
+    return 2
+    return 3
+#
+# res = spam()    # Hello
+# print(res)      # 1
+
+def _spam():
+    print('Hello')
+    yield 1
+    yield 2
+    yield 3
+
+# _res = _spam()
+# print(_res)     # <generator object _spam at 0x000001BA01F35480>
+# print(next(_res))
+"""
+Hello
+1
+"""
+# print(next(_res))   # 2
+# print(next(_res))   # 3
+# print(next(_res))       # StopIteration
+
+########################################################################################d
+
+def spam_gen():
+    print('Hello')
+    yield 10
+    print('Good evening')
+    yield 20
+    print("how are you")
+    yield 30
 
 
+res = spam_gen()
+print(next(res))
+"""
+Hello
+10
+"""
+
+print(next(res))
+"""
+Good evening
+20
+"""
+
+print(next(res))
+"""
+how are you
+30
+"""
+
+# print(next(res))    # StopIteration
