@@ -49,3 +49,37 @@ print(c)        # <function sam.<locals>.inner at 0x000001D3A596F600>
 
 b()      # 100
 c()      # 200
+
+#####################################################################################
+
+def sam(func):
+    def inner():
+        print(func)
+        return func()
+    return inner
+
+
+def greeting():
+    return "Hello World"
+
+# print(greeting())       # Hello World
+
+def demo():
+    return "In Demo"
+
+
+a = sam(greeting)
+b = sam(demo)
+print(a)    # <function sam.<locals>.inner at 0x0000020EF3ACF880>
+print(b)    # <function sam.<locals>.inner at 0x0000020EF3ACF920>
+
+print(a())
+"""
+<function greeting at 0x000001CAB5B3F600>
+Hello World
+"""
+print(b())
+"""
+<function demo at 0x000001CAB5B3F7E0>
+In Demo
+"""
