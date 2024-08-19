@@ -29,5 +29,23 @@ print(b(10, 20))    # 30
 
 ######################################################################################
 
+def sam(a):
+    def inner():
+        print(a)
+    return inner
 
+li = [10, 20, 30]
+print(li)       # [10, 20, 30]
 
+a = 10
+# print(inner())  # NameError
+
+print(sam(12))      # <function sam.<locals>.inner at 0x000001F1DB7604A0>
+
+b = sam(100)
+c = sam(200)
+print(b)        # <function sam.<locals>.inner at 0x000001D3A57304A0>
+print(c)        # <function sam.<locals>.inner at 0x000001D3A596F600>
+
+b()      # 100
+c()      # 200
