@@ -240,5 +240,53 @@ def demo():
     return "In demo"
 
 
-print(demo())
-print(sam(1, 2, a=10))
+# print(demo())
+# print(sam(1, 2, a=10))
+
+#####################################################################################
+
+# decorator to delay the execution of function by 3 seconds
+
+from time import sleep
+def delay(func):
+    def wrapper(*args, **kwargs):
+        print(f"{func.__name__} will get executed in 3 seconds")
+        sleep(3)
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
+
+@delay
+def sam():
+    return "In spam"
+
+# print(sam())
+
+#####################################################################################
+
+# 3) decorator to calculate the time taken to execute the function
+
+from time import time
+def time_taken(func):
+    def wrapper(*args, **kwargs):
+        start = time()
+        func(*args, **kwargs)
+        end = time()
+        print(f"The total time taken to execute {func.__name__} is {end-start}")
+    return wrapper
+
+
+@time_taken
+def perfect(m, n):
+    for num in range(m, n+1):
+        s = 0
+        for i in range(1, num):
+            if num % i == 0:
+                s += i
+        if s == num:
+            print(num)
+
+
+perfect(1, 10000)
+
+# 4) calculate the total number of arguments to a function
