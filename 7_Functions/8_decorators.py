@@ -121,3 +121,54 @@ print(demo())
 In Demo
 """
 
+##################################################################################
+
+def calculate(func):
+    def wrapper(a, b):
+        print('Calculating........')
+        result = func(a, b)
+        return result
+    return wrapper
+
+
+def add(x, y):
+    return x + y
+
+def sub(x, y):
+    return x - y
+
+
+add = calculate(add)
+print(add)      # <function calculate.<locals>.wrapper at 0x0000017DF977FC40>
+
+sub = calculate(sub)
+print(sub)      # <function calculate.<locals>.wrapper at 0x0000017DF977FCE0>
+
+print(add(3, 4))    # 7
+
+#######################################################################################
+
+def calculate(func):
+    def wrapper(*args, **kwargs):
+        print('Calculating........')
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
+
+
+def add(x, y, z):
+    return x + y + z
+
+def sub(x, y):
+    return x - y
+
+
+add = calculate(add)
+print(add)      # <function calculate.<locals>.wrapper at 0x0000017DF977FC40>
+
+sub = calculate(sub)
+print(sub)      # <function calculate.<locals>.wrapper at 0x0000017DF977FCE0>
+
+print(add(3, 4, 8))
+print(sub(20, 7))
+
