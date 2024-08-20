@@ -172,3 +172,51 @@ print(sub)      # <function calculate.<locals>.wrapper at 0x0000017DF977FCE0>
 print(add(3, 4, 8))
 print(sub(20, 7))
 
+######################################################################################
+
+# Decorator
+"""
+-> Adding an extra functionality to the main function without modifying it is
+   known as a decorator
+-> Syntax:
+            def deco(func):
+                def wrapper(*args, **kwargs):
+                    PRE-TASK
+                    result = func(*args, **kwargs)
+                    POST-TASK
+                    return result
+                return wrapper
+-> decorator function must have a nested function 
+-> Outer function / decorator function must take only one argument that is the 
+   address of main function
+-> nested function/ inner function/ wrapper function must take the arguments that must
+   be taken by the main function
+-> main function must be called inside wrapper function 
+-> decorator function must return the address of wrapper function
+"""
+
+def calculate(func):
+    def wrapper(*args, **kwargs):
+        print('Calculating........')
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
+
+
+@calculate          # add = calculate(add)
+def add(x, y, z):
+    return x + y + z
+
+
+@calculate          # sub = calculate(sub)
+def sub(x, y):
+    return x - y
+
+# add = calculate(add)
+# sub = calculate(sub)
+"""
+-> instead of writing this we write @decorator_name before creating the main function
+"""
+print(add(10, 5, 7))
+print(sub(10, 5))
+
