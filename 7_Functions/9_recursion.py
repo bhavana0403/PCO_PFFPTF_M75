@@ -78,3 +78,22 @@ def find_sum(li):
 
 find_sum(nums)
 
+# WAP to check whether a given number is a happy number
+"""
+49 -> 16 + 81 ->  97
+              -> 81 + 49 -> 130
+                         -> 1 + 9 + 0 -> 10
+                                      -> 1 + 0 -> 1 -> happy number
+
+51 -> 25 + 1 -> 26
+             -> 4 + 36 -> 40
+                       -> 16 + 0 -> 16
+                                 -> 1 + 36 -> 37
+                                           -> 9 + 49 = 58
+                                                     -> 25 + 64 -> 89
+                                                                -> 64 + 81 -> 145
+                                                                           -> 1 + 16 + 25 -> 42
+                                                                                          -> 16 + 4 = 20
+                                                                                                    -> 4 + 0 -> 4 -> Not a happy number 
+"""
+
