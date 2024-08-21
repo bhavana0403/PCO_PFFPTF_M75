@@ -287,6 +287,100 @@ def perfect(m, n):
             print(num)
 
 
-perfect(1, 10000)
+# perfect(1, 10000)
 
 # 4) calculate the total number of arguments to a function
+
+def count_args(func):
+    def wrapper(*args, **kwargs):
+        c = 0
+        for _ in args:
+            c += 1
+        for _ in kwargs:
+            c += 1
+        print(f"The total number of arguments passed to {func.__name__} is {c}")
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
+
+@count_args
+def sam(*args, **kwargs):
+    return  args, kwargs
+
+# print(sam(1, 2, 3, a=10, b=20))
+"""
+The total number of arguments passed to sam is 5
+((1, 2, 3), {'a': 10, 'b': 20})
+"""
+
+# print(sam(1, 2, 3, 4, a=10, b=20, c=30))
+
+###################################################################################
+
+# 5) decorator to count the number of positional and keyword arguments separately
+
+def count_args(func):
+    def wrapper(*args, **kwargs):
+        c1, c2 = 0, 0
+        for _ in args:
+            c1 += 1
+        for _ in kwargs:
+            c2 += 1
+        print(f"The total number of positional arguments passed to {func.__name__} is {c1}")
+        print(f"The total number of keyword arguments passed to {func.__name__} is {c2}")
+        result = func(*args, **kwargs)
+        return result
+    return wrapper
+
+@count_args
+def sam(*args, **kwargs):
+    return  args, kwargs
+
+# print(sam(1, 2, 3, a=10, b=20))
+"""
+The total number of positional arguments passed to sam is 3
+The total number of keyword arguments passed to sam is 2
+((1, 2, 3), {'a': 10, 'b': 20})
+"""
+
+# 6) decorator to execute a function 3 times
+
+def execute_three_times(func):
+    def wrapper(*args, **kwargs):
+        for i in range(3):
+            func(*args, **kwargs)
+    return wrapper
+
+
+@execute_three_times
+def greeting():
+    print("hello world")
+
+greeting()
+
+# 7) decorator to count the number of function calls for each function
+
+def count_func_calls(func):
+    count = 0
+    def wrapper(*args, **kwargs):
+        nonlocal count
+        count += 1
+        result = func(*args, **kwargs)
+        print(f"The number of times function has been called is {count}")
+        return result
+    return wrapper
+
+@count_func_calls       # spam = count_func_calls(spam) - > spam = wrapper
+def spam():
+    return "In spam"
+
+@count_func_calls
+def display():
+    return "In display"
+
+print(display())
+print(display())
+print(display())
+
+print(spam())
+print(spam())
