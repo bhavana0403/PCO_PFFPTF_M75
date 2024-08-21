@@ -370,6 +370,16 @@ def count_func_calls(func):
         return result
     return wrapper
 
+count = {}
+def count_func_calls(func):
+    count[func.__name__] = 0
+    def wrapper(*args, **kwargs):
+        count[func.__name__] += 1
+        result = func(*args, **kwargs)
+        print(count)
+        return result
+    return wrapper
+
 @count_func_calls       # spam = count_func_calls(spam) - > spam = wrapper
 def spam():
     return "In spam"
@@ -384,3 +394,4 @@ print(display())
 
 print(spam())
 print(spam())
+
