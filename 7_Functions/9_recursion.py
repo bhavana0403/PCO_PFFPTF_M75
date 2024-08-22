@@ -140,3 +140,39 @@ def reverse_string(st, i=0, rev=''):
 
 print(reverse_string('hello'))
 
+# 2) WAP to reverse the given number using recursion
+
+num = 876
+rev = 0
+while num != 0:
+    ld = num % 10
+    rev = rev * 10 + ld
+    num = num // 10
+print(rev)
+
+def reverse_num(num, rev=0):
+    if num == 0:
+        return rev
+    ld = num % 10
+    rev = rev * 10 + ld
+    return reverse_num(num//10, rev)
+
+print(reverse_num(876))
+
+# 3) WAP to create a list of numbers from 10 to 1 using recursion
+
+nums = []
+i = 10
+while i >= 1:
+    nums.append(i)
+    i -= 1
+print(nums)
+
+def create_list(nums=[], i=10):
+    if i < 1:
+        return nums
+    nums.append(i)
+    return create_list(nums, i-1)
+
+print(create_list())        # [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
