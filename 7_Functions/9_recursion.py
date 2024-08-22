@@ -97,3 +97,46 @@ find_sum(nums)
                                                                                                     -> 4 + 0 -> 4 -> Not a happy number 
 """
 
+def is_happy(num):
+    if num == 1:
+        return "Happy Number"
+    elif num == 4:
+        return "Not a happy number"
+    else:
+        s = 0
+        for i in str(num):
+            s += int(i)**2
+        return is_happy(s)
+
+
+print(is_happy(130))    # Happy Number
+print(is_happy(20))     # Not a happy number
+
+# Steps to convert any while loop program to recursion
+"""
+1) Initialise all the looping variables in the formal argument section
+2) Write the termination condition exactly opposite to looping condition
+3) Return the total result inside termination condition
+4) Write the logic of the program as it is excluding looping condition and updation part
+5) Increment or decrement must be done in formal argument section only
+"""
+
+
+# WAP to reverse a given string using recursion
+
+# st = 'hello'
+# rev = ''
+# i = 0
+# while i < len(st):
+#     rev = st[i] + rev
+#     i += 1
+# print(rev)
+
+def reverse_string(st, i=0, rev=''):
+    if i >= len(st):
+        return rev
+    rev = st[i] + rev
+    return reverse_string(st, i+1, rev)
+
+print(reverse_string('hello'))
+
