@@ -48,7 +48,7 @@
 
 
 # print(dir(list))
-# print(dir(nums))
+# # print(dir(nums))
 # print(dir(tuple))
 # print(dir(set))
 # print(dir(str))
@@ -85,32 +85,119 @@ Object
 """
 -> Syntax:
         class cname:
-            properties/ func
+            properties/ functionality
         obj = cname(args)
 """
 
 
-class Point:
-    """class variables"""
-    x = 4
-    y = 5
+# class Point:
+#     """class variables"""
+#     x = 4
+#     y = 5
+#
+#
+# print(Point)        # <class '__main__.Point'>
+# # print(Point())      # <__main__.Point object at 0x00000181B9D9FFD0>
+#
+# p1 = Point()
+# p2 = Point()
+#
+# print(p1)       # <__main__.Point object at 0x000002C33B334090>
+# print(p2)       # <__main__.Point object at 0x000001DD46764050>
+#
+# print(dir(Point))   # few methods will be derived from object class to user defined class by default
+# print(Point.__dict__)   # 'x': 4, 'y': 5
+#
+# print(dir(p1))      # same as that of Point
+# print(p1.__dict__)  # {}
+#
+# print(dir(p2))
+# print(p2.__dict__)  # {}
+#
+# # accessing the values
+# print(Point.x)      # 4
+# print(Point.y)      # 5
+# print(p1.x)         # 4
+# print(p2.y)         # 5
+
+# modify the value wrt class
+"""
+modification wrt class will change the values of class as well as object created for
+the class
+"""
+# Point.x = 100
+# print(Point.x)      # 100
+# print(p1.x)         # 100
+# print(p2.x)         # 100
+
+# modify the value wrt object
+"""
+modification wrt object will change only that object and not class or other objects 
+created for the same class
+"""
+
+# print(p1.__dict__)      # {}
+# print(p2.__dict__)      # {}
+#
+# p1.x = 11
+# p2.y = 12
+#
+# print(p1.__dict__)          # {'x': 11}
+# print(p2.__dict__)          # {'y': 12}
+# print(Point.__dict__)       # 'x': 100, 'y': 5
+#
+# p3 = Point()
+# print(p3.__dict__)          # {}
+# print(p3.x, p3.y)           # 100 5
+
+##################################################################################
+"""
+Generic Members or Class Members
+-> These are the members which are common for each and every object created for 
+   the class
+-> These members are created inside the class
+-> Class Variables
+
+Specific Members or Object Members
+-> These members will be different for different objects
+"""
 
 
-print(Point)        # <class '__main__.Point'>
-# print(Point())      # <__main__.Point object at 0x00000181B9D9FFD0>
+class Company:
+    Comp_name = "ABC"
+    Comp_loc = "Bengaluru"
+    Comp_CEO = "Mr.Ram"
 
-p1 = Point()
-p2 = Point()
 
-print(p1)       # <__main__.Point object at 0x000002C33B334090>
-print(p2)       # <__main__.Point object at 0x000001DD46764050>
+emp1 = Company()
+emp2 = Company()
 
-print(dir(Point))   # few methods will be derived from object class to user defined class by default
-print(Point.__dict__)   # 'x': 4, 'y': 5
+print(Company)      # <class '__main__.Company'>
+print(emp1)         # <__main__.Company object at 0x000002409BDC4110>
+print(emp2)         # <__main__.Company object at 0x000002409BDC4150>
 
-print(dir(p1))      # same as that of Point
-print(p1.__dict__)  # {}
+print(dir(Company))
+print(dir(emp1))
+print(dir(emp2))
 
-print(dir(p2))
-print(p2.__dict__)  # {}
+print(Company.__dict__)     # 'Comp_name': 'ABC', 'Comp_loc': 'Bengaluru', 'Comp_CEO': 'Mr.Ram'
+print(emp1.__dict__)        # {}
+print(emp2.__dict__)        # {}
+
+emp1.emp_name = "John"
+emp1.emp_id = "ABC123"
+emp1.emp_salary = 30000
+
+emp2.emp_name = "Mary"
+emp2.emp_id = "ABC124"
+emp2.emp_salary = 40000
+
+print(dir(Company))
+print(dir(emp1))
+print(dir(emp2))
+
+print(Company.__dict__)
+print(emp1.__dict__)        # {'emp_name': 'John', 'emp_id': 'ABC123', 'emp_salary': 30000}
+print(emp2.__dict__)        # {'emp_name': 'Mary', 'emp_id': 'ABC124', 'emp_salary': 40000}
+
 
