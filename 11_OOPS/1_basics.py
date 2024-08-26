@@ -200,4 +200,69 @@ print(Company.__dict__)
 print(emp1.__dict__)        # {'emp_name': 'John', 'emp_id': 'ABC123', 'emp_salary': 30000}
 print(emp2.__dict__)        # {'emp_name': 'Mary', 'emp_id': 'ABC124', 'emp_salary': 40000}
 
+# create a class of your own choice with 3 class members and 3 object members
 
+#####################################################################################
+
+
+class School:
+    school_name = "KV"
+    school_principal = "Mr.XYZ"
+    school_location = "Bengaluru"
+
+
+st1 = School()
+st2 = School()
+
+st1.name = "John"
+st1.age = 10
+st1.phno = 9191919191
+
+st2.name = "Mary"
+st2.age = 12
+st2.phno = 9292929292
+
+#####################################################################################
+
+# Constructor Method or Initialisation Method
+"""
+-> __init__
+-> we use constructor to initialise the members of the object
+-> we can reduce the number of instructions
+-> control will invoke __init__ method by default while creating an instance of class,
+   we need have to call the method explicitly
+-> self will store the address of the object
+"""
+
+class Company:
+    Comp_name = "ABC"
+    Comp_loc = "Bengaluru"
+    Comp_CEO = "Mr.Ram"
+
+    def __init__(self, emp_name, emp_id, emp_sal):
+        self.emp_name = emp_name
+        self.emp_id = emp_id
+        self.emp_sal = emp_sal
+
+
+emp1 = Company("John", "ABC123", 50000)
+emp2 = Company("Mary", "ABC124", 60000)
+
+print(dir(Company))
+print(dir(emp1))
+print(dir(emp2))
+
+print(Company.__dict__)
+print(emp1.__dict__)
+print(emp2.__dict__)
+
+"""
+dir(cls) -> the properties derived from object class and the members created inside
+            the class
+dir(obj) -> the properties derived from class and object members
+cls.__dict__ -> class members/ variables and methods created inside the class
+obj.__dict__ -> info about data present in object/ object members 
+"""
+
+# create a class called hospital with 3 class members and 5 object members
+# create a class of your choice with 4 class members and 5 object members
