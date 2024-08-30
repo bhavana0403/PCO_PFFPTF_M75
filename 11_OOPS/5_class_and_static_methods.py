@@ -31,11 +31,11 @@ class Company:
         print(cls.main_branch, *cls.other_branches, sep='\n')
 
 
-emp1 = Company("Amar", "TY123", "Bengaluru", "Test Engineer")
-emp2 = Company("Akbar", "TY124", "Mumbai", "Developer")
-emp3 = Company("Anthony", "TY125", "Chennai", "Team Lead")
-emp4 = Company("Alex", "TY235", "Bengaluru", "Manager")
-emp5 = Company("Akhil", "TY345", "Delhi", "Developer")
+# emp1 = Company("Amar", "TY123", "Bengaluru", "Test Engineer")
+# emp2 = Company("Akbar", "TY124", "Mumbai", "Developer")
+# emp3 = Company("Anthony", "TY125", "Chennai", "Team Lead")
+# emp4 = Company("Alex", "TY235", "Bengaluru", "Manager")
+# emp5 = Company("Akhil", "TY345", "Delhi", "Developer")
 
 # Company.comp_details()
 # emp1.comp_details()
@@ -98,10 +98,46 @@ class ShoppingCart:
             cls.prices[item] = price
 
 
-ShoppingCart.display_items()
-ShoppingCart.add_items("mobile", 8, 1200)
-ShoppingCart.add_items("smart watch", 4, 2000)
+# ShoppingCart.display_items()
+# ShoppingCart.add_items("mobile", 8, 1200)
+# ShoppingCart.add_items("smart watch", 4, 2000)
+#
+# ShoppingCart.display_items()
 
-ShoppingCart.display_items()
+#####################################################################################
 
+# static method
+"""
+-> Static method neither belongs to class nor object but acts as a supporting method for
+   both class and objects
+-> passing self or cls is not required
+-> we make use of a decorator called 'staticmethod' 
+"""
+
+class Calculator:
+    @staticmethod
+    def add(a, b):
+        if type(a) in [int, float] and type(b) in [int, float]:
+            print(a + b)
+        else:
+            raise TypeError ("Can add only real numbers")
+
+    @staticmethod
+    def sub(a, b):
+        raise TypeError ("Can not subtract the values")
+
+    @staticmethod
+    def mul(a, b):
+        if type(a) in [int, float] and type(b) in [int, float]:
+            print(a * b)
+        else:
+            raise TypeError ("Can multiply only real numbers")
+
+
+
+# # Calculator.add('a', 'b')
+# print('a' + 'b')
+
+c1 = Calculator()
+c1.mul(4, 9.86)
 
