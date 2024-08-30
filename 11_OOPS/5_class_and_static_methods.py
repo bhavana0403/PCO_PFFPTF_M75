@@ -99,7 +99,7 @@ class ShoppingCart:
 
 
 # ShoppingCart.display_items()
-# ShoppingCart.add_items("mobile", 8, 1200)
+# ShoppingCart.add_items("mobile", 8, 1000)
 # ShoppingCart.add_items("smart watch", 4, 2000)
 #
 # ShoppingCart.display_items()
