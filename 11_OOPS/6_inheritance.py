@@ -122,15 +122,67 @@ class Demo1(Demo):
     def yahoo(self):
         print('Demo1.yahoo', self.value)
 
-obj1 = Demo(22)
-obj2 = Demo1(33)
+# obj1 = Demo(22)
+# obj2 = Demo1(33)
+#
+# print(dir(Demo))
+# print(dir(Demo1))
+#
+# print(Demo.__dict__)        # apple, yahoo
+# print(Demo1.__dict__)       # yahoo
+#
+# obj1.yahoo()                # Demo.yahoo 22
+# obj2.yahoo()                # Demo1.yahoo 33
+# obj2.apple()                # Demo.apple 33
 
-print(dir(Demo))
-print(dir(Demo1))
 
-print(Demo.__dict__)        # apple, yahoo
-print(Demo1.__dict__)       # yahoo
+########################################################################################
 
-obj1.yahoo()                # Demo.yahoo 22
-obj2.yahoo()                # Demo1.yahoo 33
-obj2.apple()                # Demo.apple 33
+"""
+-> Suppose you override a parent method in child class but still want to make use of it in 
+   child class along with some extra functionalities we make use of constructor chaining
+   or method chaining
+-> Constructor Chaining
+    - Here we invoke constructor method of parent class by being there in constructor of 
+      child class
+    - Syntax:
+            super().__init__(args)
+            parentclassname.__init__(self/obj, args)
+-> Method Chaining
+    - Here we invoke a method of parent class by being there in method of child class
+    - Syntax:
+            super().mname(args)
+            parentclassname.mname(self/obj, args)
+"""
+
+class Demo:
+    def __init__(self, value):
+        self.value = value
+
+    def apple(self):
+        print('Demo.apple', self.value)
+
+    def yahoo(self):
+        print('Demo.yahoo', self.value)
+
+
+class Demo1(Demo):
+    def __init__(self, value, extra_value):
+        # super().__init__(value)
+        Demo.__init__(self, value)
+        self.extra_value = extra_value
+
+    def yahoo(self):
+        print('Demo1.yahoo', self.extra_value)
+        # super().yahoo()
+        Demo.yahoo(self)
+
+obj1 = Demo(11)
+obj2 = Demo1(22, 33)
+
+obj1.yahoo()        # Demo.yahoo 11
+obj2.yahoo()
+"""
+Demo1.yahoo 33
+Demo.yahoo 22
+"""
