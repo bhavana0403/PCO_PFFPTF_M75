@@ -186,3 +186,5 @@ obj2.yahoo()
 Demo1.yahoo 33
 Demo.yahoo 22
 """
+
+# create a class of your own choice and demonstrate single level inheritance
