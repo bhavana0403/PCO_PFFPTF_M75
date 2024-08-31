@@ -87,28 +87,50 @@ class Demo1(Demo):
         print('Demo1.google', self.value)
 
 
-obj1 = Demo(11)
-obj2 = Demo1(22)
-
-print(dir(Demo))        # 'apple', 'yahoo'
-print(Demo.__dict__)    # apple, yahoo, __init__
-
-print(dir(Demo1))       # 'apple', 'google', 'yahoo'
-print(Demo1.__dict__)   # 'google'
-
-print(dir(obj1))        # 'apple', 'value', 'yahoo'
-print(obj1.__dict__)    # {'value': 11}
-
-print(dir(obj2))        # 'apple', 'google', 'value', 'yahoo'
-print(obj2.__dict__)    # {'value': 22}
-
-
+# obj1 = Demo(11)
+# obj2 = Demo1(22)
+#
+# print(dir(Demo))        # 'apple', 'yahoo'
+# print(Demo.__dict__)    # apple, yahoo, __init__
+#
+# print(dir(Demo1))       # 'apple', 'google', 'yahoo'
+# print(Demo1.__dict__)   # 'google'
+#
+# print(dir(obj1))        # 'apple', 'value', 'yahoo'
+# print(obj1.__dict__)    # {'value': 11}
+#
+# print(dir(obj2))        # 'apple', 'google', 'value', 'yahoo'
+# print(obj2.__dict__)    # {'value': 22}
 
 
+############################################################################################
+
+# child and parent has same properties
+
+class Demo:
+    def __init__(self, value):
+        self.value = value
+
+    def apple(self):
+        print('Demo.apple', self.value)
+
+    def yahoo(self):
+        print('Demo.yahoo', self.value)
 
 
+class Demo1(Demo):
+    def yahoo(self):
+        print('Demo1.yahoo', self.value)
 
+obj1 = Demo(22)
+obj2 = Demo1(33)
 
+print(dir(Demo))
+print(dir(Demo1))
 
+print(Demo.__dict__)        # apple, yahoo
+print(Demo1.__dict__)       # yahoo
 
-
+obj1.yahoo()                # Demo.yahoo 22
+obj2.yahoo()                # Demo1.yahoo 33
+obj2.apple()                # Demo.apple 33
