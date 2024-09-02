@@ -376,6 +376,84 @@ mul -> int, float, complex
 div -> int 
 """
 
+##########################################################################################
+
+# 4) Hierarchical Inheritance
+"""
+-> Here we derive the properties from one parent class to multiple child classes
+-> Syntax:
+            class PC:
+                SB
+            class CC1(PC):
+                SB
+            class CC2(PC):
+                SB
+            .
+            .
+            class CCn(PC):
+                SB
+"""
+
+class A:
+    a1 = 10
+    a2 = 20
+
+class B(A):
+    b1 = 30
+    b2 = 40
+
+class C(A):
+    c1 = 50
+    c2 = 60
+
+
+print(dir(B))       # 'a1', 'a2', 'b1', 'b2'
+print(dir(C))       # 'a1', 'a2', 'c1', 'c2'
+
+print(B.__dict__)   # 'b1': 30, 'b2': 40,
+print(C.__dict__)   # 'c1': 50, 'c2': 60
+
+
+#####################################################################################
+
+class Parent:
+    def spam(self):
+        print('Parent.spam')
+
+
+class Child1(Parent):
+    def spam(self):
+        super().spam()
+        print('Child1.spam')
+
+
+class Child2(Parent):
+    def spam(self):
+        print('Child2.spam')
+        super().spam()
+
+
+obj1 = Child1()
+obj2 = Child2()
+
+obj1.spam()
+"""
+Parent.spam
+Child1.spam
+"""
+
+obj2.spam()
+"""
+Child2.spam
+Parent.spam
+"""
+
+#########################################################################################
+
+# 5) Hybrid Inheritance
+"""
+-> Combination of more than one type of inheritance
+"""
 
 
 
