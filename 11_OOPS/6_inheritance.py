@@ -177,6 +177,7 @@ class Demo1(Demo):
         # super().yahoo()
         Demo.yahoo(self)
 
+
 obj1 = Demo(11)
 obj2 = Demo1(22, 33)
 
@@ -188,3 +189,195 @@ Demo.yahoo 22
 """
 
 # create a class of your own choice and demonstrate single level inheritance
+
+####################################################################################
+
+# Multi Level Inheritance
+"""
+-> Here, we inherit the properties from one class to another class by considering
+   multiple levels
+-> The last derived class will have the properties from all the previous classes
+-> Syntax:
+            class C1:
+                SB
+            class C2(C1):
+                SB
+            .
+            .
+            .
+            class Cn(Cn-1):
+                SB
+"""
+
+class A:
+    a = 10
+    b = 20
+
+    def __init__(self, p, q):
+        self.p = p
+        self.q = q
+
+
+class B(A):
+    m = 30
+    n = 40
+
+
+class C(B):
+    x = 100
+
+
+obj1 = C(22, 33)
+
+print(dir(C))       # a, b, m, n, x
+print(dir(obj1))    # 'a', 'b', 'm', 'n', 'p', 'q', 'x'
+
+print(C.__dict__)       #  'x': 100
+print(obj1.__dict__)    # {'p': 22, 'q': 33}
+
+#######################################################################################
+
+class A:
+    def demo(self):
+        print('A')
+
+class B(A):
+    def demo(self):
+        super().demo()
+        print('B')
+
+class C(B):
+    def demo(self):
+        print('C')
+        super().demo()
+
+
+# obj1 = C()
+# obj1.demo()     # C A B
+
+# create a class of your choice and demonstrate multi level inheritance
+
+########################################################################################
+
+# Multiple Inheritance
+"""
+-> Here, we inherit the properties from multiple parent class to a single child class
+-> Syntax:
+            class PC1:
+                SB
+            class PC2:
+                SB
+            .
+            .
+            class PCn:
+                SB
+            class CC(PC1, PC2, ........, PCn):
+                SB
+"""
+
+class A:
+    a = 10
+    b = 20
+
+class B:
+    m = 30
+    n = 40
+
+class C:
+    a = 50
+    p = 60
+    q = 70
+
+class CC(A, B, C):
+    x = 80
+    y = 90
+
+
+obj = CC()
+print(dir(CC))      # 'a', 'b', 'm', 'n', 'p', 'q', 'x', 'y'
+print(obj.a)        # 10
+
+########################################################################################
+
+class A:
+    def demo(self):
+        print('A')
+
+class B:
+    def demo(self):
+        print('B')
+
+class C:
+    def demo(self):
+        print('C')
+
+
+class CC(A, B, C):
+    pass
+
+obj = CC()
+obj.demo()      # A
+
+####################################################################################
+class A:
+    def demo(self):
+        print('A')
+
+class B:
+    def demo(self):
+        print('B')
+
+class C:
+    def demo(self):
+        print('C')
+
+# class CC(A, B, C):
+#     def demo(self):
+#         print('CC')
+#
+# obj = CC()
+# obj.demo()      # CC
+
+##########################################################################################
+
+# class CC(A, B, C):
+#     def demo(self):
+#         super().demo()
+#         print('CC')
+#
+# obj = CC()
+# obj.demo()
+"""
+A
+CC
+"""
+
+class CC(A, B, C):
+    def demo(self):
+        print('CC')
+        B.demo(self)
+
+obj = CC()
+obj.demo()
+"""
+CC
+B
+"""
+
+# Method Resolution Order
+print(CC.__mro__)   # CC -> A -> B -> C -> object class
+
+"""
+Create a class called Calculator by inheriting from ADD, SUB, MUL and DIV classes
+which has add, sub, mul and div methods respecitively. All the methods are static
+add -> int, float, complex, bool, str, list, tuple, set, dict
+sub -> int, float, complex
+mul -> int, float, complex
+div -> int 
+"""
+
+
+
+
+
+
