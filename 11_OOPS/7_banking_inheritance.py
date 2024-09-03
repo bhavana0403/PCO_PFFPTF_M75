@@ -1,3 +1,5 @@
+# Inheritance - 'is a' relationship
+
 class BankAccount:
     interest_rate = 4.0
 
@@ -100,4 +102,44 @@ cust1.statement()
 
 # cust1.withdraw(3000, 17)        # Exception: Can not withdraw before 18 years of age
 
+#################################################################################
+
+# composition - 'has a' relationship
+# bank transactions - 'has a' customer but bank transactions is not a customer
+
+class BankTransactions:
+    """
+    customer - object member
+    can be an account holder of any of the account
+    customer is an object of any kind of account
+    """
+    def __init__(self, customer):
+        self.customer = customer
+
+    def deposit(self, amount):
+        self.customer.deposit(amount)
+
+    def withdraw(self, *args):              # withdraw of sukanya samruddhi account takes age as argument
+        self.customer.withdraw(*args)
+
+    def statement(self):
+        self.customer.statement()
+
+    def roi(self):
+        self.customer.roi()
+
+
+cust1 = SavingsBankAccount("Mary", "John", 30000)
+cust2 = SeniorCitizenAccount("Sita", "Ram", 67, 70000)
+cust3 = CurrentAccount("Jolly", "Joseph", 50000)
+cust4 = SukanyaSamruddhiAccount("Arati", "Akash", 100000)
+
+bt_cust1 = BankTransactions(cust1)
+bt_cust2 = BankTransactions(cust2)
+bt_cust3 = BankTransactions(cust3)
+bt_cust4 = BankTransactions(cust4)
+
+bt_cust1.deposit(30000)
+# bt_cust2.withdraw(15000)
+bt_cust4.withdraw(2000, 16)
 
