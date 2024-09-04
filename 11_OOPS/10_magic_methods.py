@@ -99,6 +99,8 @@ class Employee:
 #
 # print(e1 < e3)
 
+# create a class of your choice and implement comparison protocol
+
 ###################################################################################
 
 # 3) container protocol
