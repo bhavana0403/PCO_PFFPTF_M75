@@ -37,9 +37,9 @@ class Point:
         return self.a + other.a         # 9
 
 
-p1 = Point(3, 4)
-p2 = Point(6, 9)
-print(p1 + p2)
+# p1 = Point(3, 4)
+# p2 = Point(6, 9)
+# print(p1 + p2)
 
 # for the above class implement all the number protocols (sub, mul, truediv, floordiv, mod, pow)
 
@@ -104,3 +104,31 @@ class Employee:
 ###################################################################################
 
 # 3) container protocol
+
+st = 'hello'
+print(len(st))
+print(st.__len__())
+
+print('e' in st)
+print(st.__contains__('e'))
+
+print(st[1])
+print(st.__getitem__(1))
+
+d = {'a': 1, 'b': 2}
+print(d['a'])
+print(d.__getitem__('a'))
+
+li = [1, 2, 3]
+li[1] = 10
+print(li)
+
+li.__setitem__(2, 30)
+print(li)       # [1, 10, 30]
+
+del li[0]
+print(li)       # [10, 30]
+
+li.__delitem__(0)
+print(li)       # [30]
+
