@@ -166,19 +166,83 @@ class Point:
             raise KeyError
 
 
-p1 = Point(8, 3)
-print(len(p1))
+# p1 = Point(8, 3)
+# print(len(p1))
+#
+# print(p1[0])
+# # print(p1[9])
+# print(p1.__dict__)
+# print(p1['x'], p1['y'])
+# # print(p1['z'])
+#
+# p1['x'] = 88
+# print(p1.__dict__)
+#
+# del p1['x']
+# print(p1.__dict__)
+#
+# print(len(p1))
 
-print(p1[0])
-# print(p1[9])
-print(p1.__dict__)
-print(p1['x'], p1['y'])
-# print(p1['z'])
+###############################################################################
 
-p1['x'] = 88
-print(p1.__dict__)
+# 4) Attribute Protocol
+"""
+__getattribute__
+__getattr__
+__setattr__
+__delattr__
+"""
 
-del p1['x']
-print(p1.__dict__)
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-print(len(p1))
+    def __getattribute__(self, item):
+        # return self.item
+        return "In get attribute"
+
+
+# p1 = Point(2, 8)
+# print(dir(p1))
+# print(p1.x)
+# print(p1.spam)
+
+###############################################################################
+
+# point class should not take any negative values
+
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __setattr__(self, key, value):
+        if value < 0:
+            raise ValueError ("Value can not be less than 0")
+        super().__setattr__(key, value)
+
+
+
+# p1 = Point(-9, 10)
+p2 = Point(10, 20)
+# p2.y = -5
+
+###################################################################################
+
+# create a class called employee with 3 object members and make them inaccessible
+
+class Employee:
+    def __init__(self, name, empid, salary):
+        self.name = name
+        self.empid = empid
+        self.salary = salary
+
+    def __getattribute__(self, item):
+        raise Exception ("Can not access the attributes")
+
+emp1 = Employee("John", "ABC123", 60000)
+# print(emp1.name)
+
+
+# create a class your own choice and make it immutable
