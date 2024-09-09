@@ -244,5 +244,71 @@ class Employee:
 emp1 = Employee("John", "ABC123", 60000)
 # print(emp1.name)
 
+###############################################################################
 
 # create a class your own choice and make it immutable
+
+class Employee:
+    def __init__(self, name, empid, salary):
+        self.name = name
+        self.empid = empid
+        self.salary = salary
+
+    def __setattr__(self, key, value):
+        if key in self.__dict__:
+            raise ValueError ("VAlues can not be modified")
+        super().__setattr__(key, value)
+
+
+# emp1 = Employee("JOhn", "ABC1213", 80000)
+# print(emp1.__dict__)
+# emp1.phno = 9191919191
+# print(emp1.__dict__)
+# # emp1.phno = 9292929292      # ValueError: VAlues can not be modified
+"""
+In this example user will be able to add new object members but not can not modify
+the existing ones
+"""
+
+#################################################################################
+
+# class should not be able to add a new value or modify existinmg value
+
+class Employee:
+    def __init__(self, name, empid, salary):
+        # self.name = name
+        # self.empid = empid
+        # self.salary = salary
+        super().__setattr__("name", name)
+        super().__setattr__("empid", empid)
+        super().__setattr__("salary", salary)
+
+    def __setattr__(self, key, value):
+        raise ValueError ("Values can not be modified")
+
+
+emp1 = Employee("JOhn", "ABC1213", 80000)
+# emp1.phno = 9191919191      # ValueError: Values can not be modified
+
+
+#################################################################################
+
+class Point:
+    def __init__(self, x):
+        self.x = x
+
+    # def __getattribute__(self, item):
+    #     return "In get attribute"
+
+    def __getattr__(self, item):
+        return "In get attr"
+
+a = Point(9)
+print(a.x)
+print(a.spam)
+
+"""
+-> __getattr__ will be called only if the attribute is not present in the class 
+  and if __getattribute__ is not explicitly mentioned
+"""
+
