@@ -105,30 +105,80 @@ class Employee:
 
 # 3) container protocol
 
-st = 'hello'
-print(len(st))
-print(st.__len__())
+# st = 'hello'
+# print(len(st))
+# print(st.__len__())
+#
+# print('e' in st)
+# print(st.__contains__('e'))
+#
+# print(st[1])
+# print(st.__getitem__(1))
+#
+# d = {'a': 1, 'b': 2}
+# print(d['a'])
+# print(d.__getitem__('a'))
+#
+# li = [1, 2, 3]
+# li[1] = 10
+# print(li)
+#
+# li.__setitem__(2, 30)
+# print(li)       # [1, 10, 30]
+#
+# del li[0]
+# print(li)       # [10, 30]
+#
+# li.__delitem__(0)
+# print(li)       # [30]
 
-print('e' in st)
-print(st.__contains__('e'))
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-print(st[1])
-print(st.__getitem__(1))
+    def __len__(self):
+        # return 2
+        return len(self.__dict__)
 
-d = {'a': 1, 'b': 2}
-print(d['a'])
-print(d.__getitem__('a'))
+    def __getitem__(self, item):
+        if item in [0, 'x']:
+            return self.x
+        elif item in [1, 'y']:
+            return self.y
+        else:
+            raise Exception (f"Value of {item} does not exist")
 
-li = [1, 2, 3]
-li[1] = 10
-print(li)
+    def __setitem__(self, key, value):
+        if key == 'x':
+            self.x = value
+        elif key == 'y':
+            self.y = value
+        else:
+            raise Exception
 
-li.__setitem__(2, 30)
-print(li)       # [1, 10, 30]
+    def __delitem__(self, key):
+        if key == 'x':
+            del self.x
+        elif key == 'y':
+            del self.y
+        else:
+            raise KeyError
 
-del li[0]
-print(li)       # [10, 30]
 
-li.__delitem__(0)
-print(li)       # [30]
+p1 = Point(8, 3)
+print(len(p1))
 
+print(p1[0])
+# print(p1[9])
+print(p1.__dict__)
+print(p1['x'], p1['y'])
+# print(p1['z'])
+
+p1['x'] = 88
+print(p1.__dict__)
+
+del p1['x']
+print(p1.__dict__)
+
+print(len(p1))
