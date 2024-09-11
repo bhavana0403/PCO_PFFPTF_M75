@@ -115,6 +115,35 @@ sample_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_E75\10_File_Handling\sam
 
 ##################################################################################
 
+# read - read(), readline(), readlines()
+
+# read()
+
+# with open(sample_path) as file:
+#     data = file.read()
+#     print(data)
+#     print(type(data))
+
+"""
+good evening everyone
+how are you
+hope you had a good day
+today's topic is file handling
+<class 'str'>
+"""
+
+with open(sample_path) as file:
+    print(file.read(4))
+    print(file.tell())
+    print(file.read(10))
+    print(file.read(10))
+    print(file.tell())      # 25
+    print(file.seek(0))
+    print(file.read(10))
+    print(file.tell())      # 10
+
+
+
 
 
 
