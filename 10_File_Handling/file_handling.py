@@ -117,7 +117,7 @@ sample_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_E75\10_File_Handling\sam
 
 # read - read(), readline(), readlines()
 
-# read()
+# read() - read entire file in the form of string
 
 # with open(sample_path) as file:
 #     data = file.read()
@@ -132,17 +132,41 @@ today's topic is file handling
 <class 'str'>
 """
 
+# with open(sample_path) as file:
+#     print(file.read(4))
+#     print(file.tell())
+#     print(file.read(10))
+#     print(file.read(10))
+#     print(file.tell())      # 25
+#     print(file.seek(0))
+#     print(file.read(10))
+#     print(file.tell())      # 10
+
+###############################################################################
+
+# readline() - read line by line data
+
+# with open(sample_path) as file:
+#     print(file.readline())
+#     print(file.readline())
+#     print(file.readline(15))
+#     print(file.readline(10))
+#     print(file.readline())
+
+###############################################################################
+
+# readlines() - read the file in the form of list of strings
+
 with open(sample_path) as file:
-    print(file.read(4))
-    print(file.tell())
-    print(file.read(10))
-    print(file.read(10))
-    print(file.tell())      # 25
-    print(file.seek(0))
-    print(file.read(10))
-    print(file.tell())      # 10
+    print(file.readlines())
 
+###############################################################################
 
+# for loop
+
+file_obj = open(sample_path)
+for line in file_obj:
+    print(line)
 
 
 
