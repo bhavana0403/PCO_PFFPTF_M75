@@ -157,18 +157,43 @@ today's topic is file handling
 
 # readlines() - read the file in the form of list of strings
 
-with open(sample_path) as file:
-    print(file.readlines())
+# with open(sample_path) as file:
+#     print(file.readlines())
 
 ###############################################################################
 
 # for loop
 
-file_obj = open(sample_path)
-for line in file_obj:
-    print(line)
+# file_obj = open(sample_path)
+# for line in file_obj:
+#     print(line)
 
+###############################################################################
 
+# # write - write(data), writelines(data)
+# with open('sample1.txt', 'w') as file:
+#     print(file.write('Hello\n'))  # 6
+#     print(file.write('Good evening\n'))   # 13
+#     print(file.writelines(['How are you\n', 'welcome to python class\n']))
+
+# # append
+# with open('sample1.txt', 'a') as file:
+#     print(file.write('Hello\n'))  # 6
+#     print(file.write('Good evening\n'))   # 13
+#     print(file.writelines(['How are you\n', 'welcome to python class\n']))
+
+# # create
+# with open('sample5.txt', 'x') as file:
+#     print(file.write('Hello\n'))  # 6
+#     print(file.write('Good evening\n'))   # 13
+#     print(file.writelines(['How are you\n', 'welcome to python class\n']))
+
+###############################################################################
+
+"""
+w+ -> write and read
+r+ -> read and append 
+"""
 
 
 
