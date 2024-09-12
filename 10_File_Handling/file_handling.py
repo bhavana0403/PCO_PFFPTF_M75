@@ -228,6 +228,29 @@ with open(sample_log_path) as file:
 
 ####################################################################################
 
+# capture all the messages in sample.log
+
+with open(sample_log_path) as file:
+    messages = []
+    for line in file:
+        if line.strip():
+            message = line.split()[2]
+            if message not in messages:
+                messages.append(message)
+    print(messages)
+
+
+# count the number of occurrence of each message in sample.log
+with open(sample_log_path) as file:
+    messages = {}
+    for line in file:
+        if line.strip():
+            message = line.split()[2]
+            if message not in messages:
+                messages[message] = 1
+            else:
+                messages[message] += 1
+    print(messages)
 
 
 

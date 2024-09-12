@@ -234,7 +234,11 @@ print(count)
 # 8) WAP to remove the duplicate values from the string
 st = 'mississippi'
 # o/p = misp
-
+res = ''
+for ch in st:
+    if ch not in res:
+        res += ch
+print(res)
 
 # 9) WAP to create a tuple of 'n' natural numbers along with it's cube
 
