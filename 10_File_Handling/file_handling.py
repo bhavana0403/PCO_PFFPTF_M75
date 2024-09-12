@@ -201,60 +201,142 @@ r+ -> read and append
 
 sample_log_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_E75\10_File_Handling\sample.log"
 
-with open(sample_log_path) as file:
-    count = 0
-    for line in file:
-        count += 1
-    print(count)        # 340
+# with open(sample_log_path) as file:
+#     count = 0
+#     for line in file:
+#         count += 1
+#     print(count)        # 340
 
 # count the number of non-blank lines
 
-with open(sample_log_path) as file:
-    count = 0
-    for line in file:
-        if line.strip():
-            count += 1
-    print(count)        # 283
+# with open(sample_log_path) as file:
+#     count = 0
+#     for line in file:
+#         if line.strip():
+#             count += 1
+#     print(count)        # 283
 
 # count the number of blank lines
 
-with open(sample_log_path) as file:
-    count = 0
-    for line in file:
-        if not (line.strip()):
-            count += 1
-    print(count)        # 57
+# with open(sample_log_path) as file:
+#     count = 0
+#     for line in file:
+#         if not (line.strip()):
+#             count += 1
+#     print(count)        # 57
 
 
 ####################################################################################
 
 # capture all the messages in sample.log
 
-with open(sample_log_path) as file:
-    messages = []
-    for line in file:
-        if line.strip():
-            message = line.split()[2]
-            if message not in messages:
-                messages.append(message)
-    print(messages)
+# with open(sample_log_path) as file:
+#     messages = []
+#     for line in file:
+#         if line.strip():
+#             message = line.split()[2]
+#             if message not in messages:
+#                 messages.append(message)
+#     print(messages)
 
 
 # count the number of occurrence of each message in sample.log
-with open(sample_log_path) as file:
-    messages = {}
+# with open(sample_log_path) as file:
+#     messages = {}
+#     for line in file:
+#         if line.strip():
+#             message = line.split()[2]
+#             if message not in messages:
+#                 messages[message] = 1
+#             else:
+#                 messages[message] += 1
+#     print(messages)
+
+
+###############################################################################
+
+access_log_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_E75\10_File_Handling\access-log.txt"
+
+# # capture all the ip addresses from accesslog.txt file
+# with open(access_log_path) as file:
+#     ips = []
+#     for line in file:
+#         if line.strip():
+#             ip = line.split()[0]
+#             if ip not in ips:
+#                 ips.append(ip)
+#     print(ips)
+
+# with open(access_log_path) as file:
+#     ips = set()
+#     for line in file:
+#         if line.strip():
+#             ip = line.split()[0]
+#             ips.add(ip)
+#     print(ips)
+
+# capture id address and their occurrence from accesslog.txt
+
+# with open(access_log_path) as file:
+#     ips = {}
+#     for line in file:
+#         if line.strip():
+#             ip = line.split()[0]
+#             if ip not in ips:
+#                 ips[ip] = 1
+#             else:
+#                 ips[ip] += 1
+#     print(ips)
+
+
+# # capture ips using comprehensions
+#
+# file_obj = open(access_log_path)
+# ips = [line.split()[0] for line in file_obj if line.strip()]
+# print(ips)      # captures all ips
+# file_obj.close()
+
+# # unique ips
+# file_obj = open(access_log_path)
+# unique_ips = {line.split()[0] for line in file_obj if line.strip()}
+# print(unique_ips)
+# file_obj.close()
+
+###############################################################################
+
+st = 'abacaabbcaacb'
+res = {}
+for i in st:
+    if i not in res:
+        res[i] = 1
+    else:
+        res[i] += 1
+print(res)
+
+res1 = {}.fromkeys(st, 0)
+# print(res1)      # {'a': 0, 'b': 0, 'c': 0}
+for ch in st:
+    res1[ch] += 1
+print(res1)     # {'a': 6, 'b': 4, 'c': 3}
+
+from collections import defaultdict
+"""initialisation and updation of keys and values happen together"""
+
+res2 = defaultdict(int)
+# print(res2)     # defaultdict(<class 'int'>, {})
+for ch in st:
+    res2[ch] += 1
+print(res2)     # defaultdict(<class 'int'>, {'a': 6, 'b': 4, 'c': 3})
+
+
+
+with open(access_log_path) as file:
+    ips = defaultdict(int)
     for line in file:
         if line.strip():
-            message = line.split()[2]
-            if message not in messages:
-                messages[message] = 1
-            else:
-                messages[message] += 1
-    print(messages)
-
-
-
-
+            ip = line.split()[0]
+            ips[ip] += 1
+    print(ips)
 
 
 
