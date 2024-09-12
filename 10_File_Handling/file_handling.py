@@ -338,5 +338,21 @@ with open(access_log_path) as file:
             ips[ip] += 1
     print(ips)
 
+############################################################################
+
+# write all the unique ips to unique.txt
+
+# unique ips
+file_obj = open(access_log_path)
+unique_ips = {line.split()[0] for line in file_obj if line.strip()}
+print(unique_ips)
+file_obj.close()
+
+with open("unique.txt", 'w+') as file:
+    for ip in unique_ips:
+        file.write(ip + '\n')
+    file.seek(0)
+    for line in file:
+        print(file.readline())
 
 
