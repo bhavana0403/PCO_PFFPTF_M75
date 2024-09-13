@@ -355,4 +355,35 @@ with open("unique.txt", 'w+') as file:
     for line in file:
         print(file.readline())
 
+##############################################################################
+
+# capture all the countries from football.txt
+
+football_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_E75\10_File_Handling\football.txt"
+with open(football_path, encoding="UTF-8") as file:
+    countries = []
+    next(file)
+    for line in file:
+        if line.strip():
+            country = line.split('\t')[1]
+            if country not in countries:
+                countries.append(country)
+    print(countries)
+
+# group the countries along with their group name
+
+with open(football_path, encoding='UTF-8') as file:
+    groups = {}
+    next(file)
+    for line in file:
+        if line.strip():
+            data = line.split('\t')
+            group, country = data[0], data[1]
+            if group not in groups:
+                groups[group] = {country}
+            else:
+                groups[group].add(country)
+    print(groups)
+
+    
 
