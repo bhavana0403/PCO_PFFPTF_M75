@@ -75,6 +75,74 @@ with open(path, 'w') as file:
     ])
 
 
+# DictWriter
+path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_E75\12_CSV_File_Handling\sample1.csv"
+with open(path, 'w') as file:
+    writer_obj = csv.DictWriter(file, ['name', 'empid', 'salary'])
+    writer_obj.writeheader()
+    writer_obj.writerow({'name': "Ram", "empid": "ABC123", "salary": '70000'})
+    writer_obj.writerows([
+        {'name': "Sita", "empid": "AB142", "salary": "80000"},
+        {'name': "Laxman", "empid": "AB234", "salary": "90000"}
+    ])
+
+###############################################################################
+
+# print all the names in employess.csv
+
+employee_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_E75\12_CSV_File_Handling\employees.csv"
+
+with open(employee_path) as file:
+    reader_obj = csv.reader(file)
+    names = []
+    next(reader_obj)
+    for line in reader_obj:
+        names += [line[0]]
+    print(names)
+
+with open(employee_path) as file:
+    reader_obj = csv.DictReader(file)
+    names = []
+    for data in reader_obj:
+        names.append(data['name'])
+    print(names)
+
+
+###############################################################################
+
+# group the male and female employees
+
+with open(employee_path) as file:
+    reader_obj = csv.reader(file)
+    next(reader_obj)
+    male, female = [], []
+    for line in reader_obj:
+        if line[1] == 'male':
+            male.append(line[0])
+        else:
+            female.append(line[0])
+    print(male)
+    print(female)
+
+with open(employee_path) as file:
+    reader_obj = csv.DictReader(file)
+    male, female = [], []
+    for data in reader_obj:
+        if data['gender'] == 'male':
+            male.append(data['name'])
+        else:
+            female.append(data['name'])
+    print(female)
+    print(male)
+
+# print the names of employees who earn more than 70000
+
+with open(employee_path) as file:
+    reader_obj = csv.DictReader(file)
+    for data in reader_obj:
+        if int(data['pay']) >= 70000:
+            print(data['name'])
+
 
 
 
