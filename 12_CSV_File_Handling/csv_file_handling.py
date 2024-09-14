@@ -163,4 +163,18 @@ employee_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_E75\12_CSV_File_Handli
 
 # print the names of employees who earn the least and most salary
 
+with open(employee_path) as file:
+    reader_obj = csv.reader(file)
+    next(reader_obj)
+    by_pay = sorted(reader_obj, key=lambda line: int(line[3]))
+    # print(by_pay)
+    least, *rest, highest = by_pay
+    print(least)
+    print(highest)
 
+with open(employee_path) as file:
+    reader_obj = csv.DictReader(file)
+    by_pay = sorted(reader_obj, key=lambda data: int(data['pay']))
+    least, *rest, highest = by_pay
+    print(least)
+    print(highest)
