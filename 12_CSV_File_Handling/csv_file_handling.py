@@ -178,3 +178,4 @@ with open(employee_path) as file:
     least, *rest, highest = by_pay
     print(least)
     print(highest)
+
