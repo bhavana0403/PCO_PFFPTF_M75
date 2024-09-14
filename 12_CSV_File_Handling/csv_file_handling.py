@@ -92,57 +92,75 @@ with open(path, 'w') as file:
 
 employee_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_E75\12_CSV_File_Handling\employees.csv"
 
-with open(employee_path) as file:
-    reader_obj = csv.reader(file)
-    names = []
-    next(reader_obj)
-    for line in reader_obj:
-        names += [line[0]]
-    print(names)
+# with open(employee_path) as file:
+#     reader_obj = csv.reader(file)
+#     names = []
+#     next(reader_obj)
+#     for line in reader_obj:
+#         names += [line[0]]
+#     print(names)
 
-with open(employee_path) as file:
-    reader_obj = csv.DictReader(file)
-    names = []
-    for data in reader_obj:
-        names.append(data['name'])
-    print(names)
+# with open(employee_path) as file:
+#     reader_obj = csv.DictReader(file)
+#     names = []
+#     for data in reader_obj:
+#         names.append(data['name'])
+#     print(names)
 
 
 ###############################################################################
 
 # group the male and female employees
 
-with open(employee_path) as file:
-    reader_obj = csv.reader(file)
-    next(reader_obj)
-    male, female = [], []
-    for line in reader_obj:
-        if line[1] == 'male':
-            male.append(line[0])
-        else:
-            female.append(line[0])
-    print(male)
-    print(female)
+# with open(employee_path) as file:
+#     reader_obj = csv.reader(file)
+#     next(reader_obj)
+#     male, female = [], []
+#     for line in reader_obj:
+#         if line[1] == 'male':
+#             male.append(line[0])
+#         else:
+#             female.append(line[0])
+#     print(male)
+#     print(female)
 
-with open(employee_path) as file:
-    reader_obj = csv.DictReader(file)
-    male, female = [], []
-    for data in reader_obj:
-        if data['gender'] == 'male':
-            male.append(data['name'])
-        else:
-            female.append(data['name'])
-    print(female)
-    print(male)
+# with open(employee_path) as file:
+#     reader_obj = csv.DictReader(file)
+#     male, female = [], []
+#     for data in reader_obj:
+#         if data['gender'] == 'male':
+#             male.append(data['name'])
+#         else:
+#             female.append(data['name'])
+#     print(female)
+#     print(male)
 
 # print the names of employees who earn more than 70000
 
-with open(employee_path) as file:
-    reader_obj = csv.DictReader(file)
-    for data in reader_obj:
-        if int(data['pay']) >= 70000:
-            print(data['name'])
+# with open(employee_path) as file:
+#     reader_obj = csv.DictReader(file)
+#     for data in reader_obj:
+#         if int(data['pay']) >= 70000:
+#             print(data['name'])
 
 
+# print the names of employees who earn more than the average salary
+
+# with open(employee_path) as file:
+#     reader_obj = csv.DictReader(file)
+#     salaries = [int(data['pay']) for data in reader_obj]
+#     print(salaries)
+#     avg_sal = sum(salaries) // len(salaries)
+#     print(avg_sal)
+#     file.seek(0)
+#     reader_obj = csv.DictReader(file)
+#     for data in reader_obj:
+#         if int(data['pay']) >= avg_sal:
+#             print(data['name'])
+
+
+####################################################################
+
+# print the names of employees who earn the least and most salary
 
 
