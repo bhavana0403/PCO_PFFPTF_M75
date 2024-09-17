@@ -55,3 +55,74 @@ def sam(a, b, c):
 
 #################################################################################
 
+
+"""
+-> We can handle these exceptions using try and except block
+-> Try block includes problem statement which throws an error
+-> except block takes control when try block has some exception
+-> 1) Specific Exception Handling
+   2) Generic Exception Handling
+   3) Default Exception Handling
+"""
+
+# 1) Specific Exception Handling
+
+def add():
+    a = eval(input('Enter the value of a : '))
+    b = eval(input('Enter the value of b : '))
+    print(a + b)
+
+# add()
+
+# try:
+#     add()
+# except TypeError:
+#     print('Datatype not matching')
+#
+# try:
+#     add()
+# except TypeError as message:
+#     print(message)
+
+# def add():
+#     try:
+#         a = eval(input('Enter the value of a : '))
+#         b = eval(input('Enter the value of b : '))
+#         print(a + b)
+#     except TypeError:
+#         add()
+#
+# add()
+
+# for i in range(3):
+#     try:
+#         a = eval(input('Enter the value of a : '))
+#         b = eval(input('Enter the value of b : '))
+#         print(a + b)
+#         break
+#     except TypeError as msg:
+#         print(msg)
+#         print('Try again')
+#
+# else:
+#     raise TypeError
+
+
+# def add():
+#     try:
+#         a = eval(input('Enter the value of a : '))
+#         b = eval(input('Enter the value of b : '))
+#         print(a + b)
+#     except TypeError as msg:
+#         if type(a) == set and type(b) == set:
+#             print(a.union(b))
+#         elif type(a) == dict and type(b) == dict:
+#             print({**a, **b})
+#         else:
+#             print(msg)
+# add()
+
+
+
+
+
