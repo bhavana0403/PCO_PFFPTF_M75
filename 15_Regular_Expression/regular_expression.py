@@ -131,7 +131,51 @@ print(len(re.findall(r"[A-Za-z]", "Hello HoW ArE YOu")))        # 14
 # count the number of white spaces
 print(len(re.findall(r"\s", "Hello HoW ArE YOu")))   # 3
 
+##################################################################################
 
+# meta characters
+# '+' -> matches 1 or more times
 
+# match any digit from 0 to 9 as long as it matches
+st = "The cost of 10 gram gold is Rs. 75640"
+print(re.findall(r"[0-9]+", st))        # ['10', '75640']
+
+# match one or more occurrences of character 'n' between a and b
+st = 'anbannnnbnnnabnnnbannnnnbannnnnnnnnnnnbab'
+print(re.findall(r"an+b", st))      # ['anb', 'annnnb', 'annnnnb', 'annnnnnnnnnnnb']
+
+# match all the lowercase characters as long as it matches
+st = "Hello HoW ArE YOu"
+print(re.findall(r"[a-z]+", st))        # ['ello', 'o', 'r', 'u']
+
+# match all the uppercase characters as long as it matches
+print(re.findall(r"[A-Z]+", st))
+
+# match all the alphabets as long as it matches
+print(re.findall(r"[A-Za-z]+", "Hai, How are you?"))    # ['Hai', 'How', 'are', 'you']
+
+# find the sum of numbers present in the string
+st = "8kfd65gg7fd455uyfkj*(&876jkyu7578"
+# res1 = 8 + 6 + 5 + 7 + 4 + 5 + 5 + 8 + 7 + 6 + 7 + 5 + 7 + 8
+# res2 = 8 + 65 + 7 + 455 + 876 + 7578
+
+nums1 = re.findall(r"[0-9]", st)
+nums2 = re.findall(r"[0-9]+", st)
+# print(nums1, nums2)
+s1, s2 = 0, 0
+for i in nums1:
+    s1 += int(i)
+for i in nums2:
+    s2 += int(i)
+print(s1, s2)   # 88 8989
+
+################################################################################
+# meta character '?'
+
+# match July or Jul
+print(re.findall(r"July?", "24 July 2024 16 Jul 2019"))
+
+# match color or colour
+print(re.findall(r"colou?r", "colourful colors"))       # ['colour', 'color']
 
 
