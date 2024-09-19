@@ -73,3 +73,65 @@ import re
 """
 re.findall(expression, string) -> return a list of all the matches
 """
+
+print(re.findall(r"the", "the theory of relativity"))       # ['the', 'the']
+
+print(re.findall(r"cat", "the dragging belly indicates the cat is too fat"))    # ['cat', 'cat']
+
+print(re.findall(r"python", "python is a programming language"))    # ['python']
+
+print(re.findall(r"aeiou", "hello how are you"))        # []
+
+print(re.findall(r"[aeiou]", "hello how are you"))      # ['e', 'o', 'o', 'a', 'e', 'o', 'u']
+
+print(len(re.findall(r"[aeiou]", "hello how are you")))       # 7
+
+print(''.join(re.findall(r"[aeiou]", "hello how are you")))     # eooaeou
+
+# match smith and Smith
+
+print(re.findall(r"smith", "SilverSmith and goldsmith"))        # ['smith']
+
+print(re.findall(r"Smith", "SilverSmith and goldsmith"))        # ['Smith']
+
+print(re.findall(r"[sSmith]", "SilverSmith and goldsmith"))     # ['S', 'i', 'S', 'm', 'i', 't', 'h', 's', 'm', 'i', 't', 'h']
+
+print(re.findall(r"[sS]mith", "SilverSmith and goldsmith"))     # ['Smith', 'smith']
+
+# match seperate and separate
+print(re.findall(r"sep[ae]rate", "seperate and separate"))      # ['seperate', 'separate']
+
+# grey and gray
+
+# count the vowels in a string
+st = "python prOgrammIng"
+print(len(re.findall(r"[aeiouAEIOU]", st)))     # 4
+
+# match any number between 0 to 9
+st = "The cost of 10 gram gold is Rs. 75640"
+print(re.findall(r"[0123456789]", st))      # ['1', '0', '7', '5', '6', '4', '0']
+
+print(re.findall(r"[0-9]", st))     # ['1', '0', '7', '5', '6', '4', '0']
+
+# match all html header tags -> <h1> <h2> <h3> <h4> <h5> <h6>
+print(re.findall(r"<h[1-6]>", "<h1> <h2> <h3> <h4> <h5> <h6>"))
+
+# match all lowercase characters
+print(re.findall(r"[a-z]", "Hello HoW ArE YOu"))        # ['e', 'l', 'l', 'o', 'o', 'r', 'u']
+
+# match all uppercase characters
+print(re.findall(r"[A-Z]", "Hello HoW ArE YOu"))        # ['H', 'H', 'W', 'A', 'E', 'Y', 'O']
+
+# match both uc and lc
+print(re.findall(r"[A-Za-z]", "Hello HoW ArE YOu"))
+
+# count the total number of alphabets
+print(len(re.findall(r"[A-Za-z]", "Hello HoW ArE YOu")))        # 14
+
+# count the number of white spaces
+print(len(re.findall(r"\s", "Hello HoW ArE YOu")))   # 3
+
+
+
+
+
