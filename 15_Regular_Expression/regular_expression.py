@@ -220,3 +220,57 @@ print(re.findall(r"\b[a-z]+\b", "the Power of Your subConscious mind"))       # 
 # expression to match words with vowel only
 
 
+##################################################################################
+
+# count the number of spaces in sample.log
+
+sample_log_path = r"C:\Users\QSP\PycharmProjects\PCO_PFFPTD_E75\10_File_Handling\sample.log"
+with open(sample_log_path) as file:
+    # data = file.read()
+    # print(len(re.findall(r"\s", data)))
+    count = 0
+    for line in file:
+        count += len(re.findall("\s", line))
+    print(count)
+
+# count the number of capital letter words in sample.log
+
+with open(sample_log_path) as file:
+    c = 0
+    for line in file:
+        c += len(re.findall(r"\b[A-Z]+\b", line))
+    print(c)
+
+
+#####################################################################################
+
+# match all the digits
+sentence = "The cost of 1 kg mango is 90 and that of apple is 250"
+print(re.findall(r"\d", sentence))      # ['1', '9', '0', '2', '5', '0']
+
+# match the numbers
+print(re.findall(r"\d+", sentence))     # ['1', '90', '250']
+
+# match exactly 2 digits
+
+nums = '78 758 56 1 9 87 764 39'
+print(re.findall(r"\b\d{2}\b", nums))       # ['78', '56', '87', '39']
+
+# match numbers from 10 to 999
+print(re.findall(r"\b\d{2,3}\b", "97 785 23864 868 823 99 23 3 897"))   #
+
+# match phone number pattern
+nums = "987-899-1234 898-2939-8689 987-376-7879"
+print(re.findall(r"\d{3}-\d{3}-\d{4}", nums))
+
+# match ip address
+ips = "198.165.9.8  125.97.97009.86 196.168.5.5486 10.0.10.1"
+print(re.findall(r"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b", ips))   # ['198.165.9.8', '10.0.10.1']
+
+# match university number - 1PI13EE898
+un = "1PI14CS013 8MI18EC086 3PI10IS988"
+print(re.findall(r"[1-4][A-Z]{2}\d{2}[A-Z]{2}\d{3}", un))       #
+
+# match PAN Card number - COIPB0908E
+print(re.findall(r"[A-Z]{5}\d{4}[A-Z]", "COIPB0908E ABCDE9863R"))
+
