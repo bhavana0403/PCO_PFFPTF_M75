@@ -178,4 +178,45 @@ print(re.findall(r"July?", "24 July 2024 16 Jul 2019"))
 # match color or colour
 print(re.findall(r"colou?r", "colourful colors"))       # ['colour', 'color']
 
+# count the number of special characters
+st = 'k9*^sdf !@#$ak  sdf09)(*&^%$'
+print(len(re.findall(r"[^A-Za-z0-9]", st)))      # 16
+
+###################################################################################
+
+# word boundary (\b)
+
+print(re.findall(r"day", "What a beautiful day today is, I had a daydream"))        # ['day', 'day', 'day']
+
+print(re.findall(r"\bday", "What a beautiful day today is, I had a daydream"))      # ['day', 'day']
+
+print(re.findall(r"day\b", "What a beautiful day today is, I had a daydream"))      # ['day', 'day']
+
+print(re.findall(r"\bday\b", "What a beautiful day today is, I had a daydream"))       # ['day']
+
+# match the words starting with 'p'
+st = "prakriti is learning python from pyspiders"
+print(re.findall(r"\bp[A-Za-z]+", st))     # ['prakriti', 'python', 'pyspiders']
+
+# match the words starting with p or P
+st = "Prakriti is learning python from PySpiders"
+print(re.findall(r"\b[pP][a-zA-Z]+", st))        # ['Prakriti', 'python', 'PySpiders']
+
+print(re.findall(r"(?:p|P)[a-zA-Z]+", st))      # ['Prakriti', 'python', 'PySpiders']
+
+# match python or java
+print(re.findall(r"(python|java)", "python and java are programming languages"))        # ['python', 'java']
+
+# expression to match names ending with a or i
+names = "hari krishna kavya abhishek ram nandan bhuvan"
+print(re.findall(r"\b[a-zA-Z]+[ai]\b", names))      # ['hari', 'krishna', 'kavya']
+
+# expression to match words starting with capital letter
+print(re.findall(r"\b[A-Z][a-zA-Z]+", "The Power of Your SubConscious Mind"))     # ['The', 'Power', 'Your', 'SubConscious', 'Mind']
+
+# expression to match words with lowercase characters only
+print(re.findall(r"\b[a-z]+\b", "the Power of Your subConscious mind"))       # ['the', 'of', 'mind']
+
+# expression to match words with vowel only
+
 
