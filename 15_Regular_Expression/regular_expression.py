@@ -264,7 +264,7 @@ nums = "987-899-1234 898-2939-8689 987-376-7879"
 print(re.findall(r"\d{3}-\d{3}-\d{4}", nums))
 
 # match ip address
-ips = "198.165.9.8  125.97.97009.86 196.168.5.5486 10.0.10.1"
+ips = "198.165.9.8 125.97.97009.86 196.168.5.5486 10.0.10.1"
 print(re.findall(r"\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\b", ips))   # ['198.165.9.8', '10.0.10.1']
 
 # match university number - 1PI13EE898
@@ -273,4 +273,46 @@ print(re.findall(r"[1-4][A-Z]{2}\d{2}[A-Z]{2}\d{3}", un))       #
 
 # match PAN Card number - COIPB0908E
 print(re.findall(r"[A-Z]{5}\d{4}[A-Z]", "COIPB0908E ABCDE9863R"))
+
+st = "What a beautiful day today is, I had a daydream on sunday afternoon. today is my dayoff"
+print(re.findall(r"\bday", st))
+
+# word starting with day
+print(re.findall(r"\bday[a-z]*", st))
+
+# word ending with day
+print(re.findall(r"\b[a-z]*day\b", st))
+
+# expression to match 3 letter word
+
+sentence = "hello eve how are you"
+print(re.findall(r"\b[a-z]{3}\b", sentence))
+
+# meta character - * -> match 0 or more expressions
+
+# match words starting with he
+
+sentence = "he helps the poor and he is the hero of the community"
+print(re.findall(r"\bhe[A-Za-z]*", sentence))
+
+# escaping a meta character
+# count the number of ?
+sentence = "hello there? how are you? how is life? where do you work?"
+print(len(re.findall(r"\?", sentence)))     # 4
+
+# count the number of +
+sentence = "8+689+76+86*86/86"
+print(re.findall(r"\+", sentence))
+
+# count the  number of *
+
+######################################################################################
+
+# match either python or java
+print(re.findall(r"(python|java)", "python and java are programming languages"))
+
+# match the words starting with he or se
+sentence = "she sells sea shells in the seashore, he helps the community and he is the hero"
+print(re.findall(r"\b(?:he|se)[a-zA-Z]*\b", sentence))      # ['sells', 'sea', 'seashore', 'he', 'helps', 'he', 'hero']
+
 
